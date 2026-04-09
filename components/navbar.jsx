@@ -46,8 +46,8 @@ const navbar = () => {
             
             <div className={`${isOpen ? 'absolute top-15 left-0 w-full content-center items-center bg-base-100' : 'hidden'} w-1/2 items-center justify-end sm:flex `}>
                 <ul className={`${isOpen ? 'flex flex-col items-center py-5 gap-4':'flex gap-4 px-5'}`}>
-                    <li><a href="#home" className="text-accent border-b border-accent">Home</a></li>
-                    <li><a href="#about" className="text-neutral">About</a></li>
+                    <li><a href="#home" className="text-accent border-b border-accent">Accueil</a></li>
+                    <li><a href="#about" className="text-neutral">À Propos</a></li>
                     <li><a href="#projects" className="text-neutral">Portfolio</a></li>
                     <li><a href="#contact" className="text-neutral">Contact</a></li>
                 </ul>

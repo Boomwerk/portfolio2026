@@ -20,8 +20,8 @@ export default function Portfolio() {
         <div className="flex justify-center gap-5 flex-wrap">
 
             
-            { Object.values(project[page]).map(e => {
-                    return (<div className="card bg-base-100 w-96 shadow-sm">
+            { Object.values(project[page]).map((e,index) => {
+                    return (<div key={index}className="card bg-base-100 w-96 shadow-sm">
                         <figure>
                             <img
                             src={e.img}
@@ -34,8 +34,8 @@ export default function Portfolio() {
                             </h2>
                             <p>{e.description}</p>
                             <div className="card-actions justify-end">
-                                {e.technos.map(a => {
-                                    return <div className="badge badge-outline">{a}</div>
+                                {e.technos.map((a,index) => {
+                                    return <div key={index} className="badge badge-outline">{a}</div>
                                 })}
                                 
                             </div>
