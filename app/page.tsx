@@ -1,11 +1,13 @@
 import Navbar from "@/components/navbar";
+import Portfolio from "@/components/portfolio";
 
 export default function Home() {
+
   return (
     <>
       <Navbar/>
 
-      <div className="bg-base-100 p-5 flex justify-center w-full flex-col md:flex-row mb-5 ">
+      <div className="bg-base-100 p-5 flex justify-center w-full flex-col md:flex-row h-screen" id="home">
          
           <div className="flex justify-center min-w-1/2">
               <div className="flex flex-col min-w-3/4 justify-center px-5 ">
@@ -51,14 +53,14 @@ export default function Home() {
           </div>
       </div>
 
-      <div className="bg-base-100 p-5 flex flex-col justify-center w-full lg:flex-row mt-5">
+      <div className="bg-base-100 flex justify-around items-center w-full md:flex-row flex-col gap-5 p-5 mb-[150px]" id="about">
 
-        <div className="w-full p-5">
-          <img src="/image/apercuProjet.png" alt="" className=" w-full p-5"/>
+        <div className="w-lg lg:p-5 p-10">
+          <img src="/image/apercuProjet.png" alt="" className=""/>
         </div>
-        <div className="w-full p-5 flex flex-col ">
-          <h2 className="mb-5 font-bold text-accent">À PROPOS</h2>
-          <p className="my-5 w-full lg:w-lg">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/>
+        <div className="w-lg lg:p-5 p-10">
+          <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
+          <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/>
 
 Autonome, j’ai mené plusieurs projets de A à Z, allant de sites WordPress à une plateforme de formation en ligne.<br/><br/>
 
@@ -67,6 +69,234 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
 
       </div>
+
+      <div className="flex flex-col justify-center items-center w-full " id="projects">
+        <h2 className="font-bold text-accent mb-[100px]">LES COMPETENCES</h2>
+   
+        <div className="tabs tabs-border flex justify-center mt-5 w-full">
+          {/* first tab */}
+          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Front-end" />
+          <div className="tab-content bg-base-100 p-10 w-full">
+           
+            <div className="flex flex-col gap-5 w-full">
+
+              <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row">
+                <img src="/image/react.png" alt="" />
+                <img src="/image/html.png" alt="" />
+                <img src="/image/css.png" alt="" />
+
+              </div>
+              <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row mt-5">
+                <img src="/image/js.png" alt="" />
+                <img src="/image/tailwind.png" alt="" />
+                <img src="/image/bootstrap.png" alt="" />
+              </div>
+            </div>
+
+          </div>
+          
+          {/* 2 tab */}
+          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Back-end" defaultChecked />
+          <div className="tab-content bg-base-100 p-10">
+            
+
+            <div className="w-full flex justify-center items-center gap-10 flex-col md:flex-row">
+              <img src="/image/php.png" alt="" />
+              <img src="/image/symfony.png" alt="" />
+              <img src="/image/mysql.png" alt="" />
+
+            </div>
+              
+     
+
+          </div>
+          {/* 3 tab */}
+          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Gestion de projet" />
+          <div className="tab-content bg-base-100 p-10">
+            <div className="flex flex-col gap-5">
+
+              <div className="w-full flex justify-center items-center gap-10 flex-col lg:flex-row mt-5">
+                <img src="/image/git.png" alt="" />
+                <img src="/image/trello.png" alt="" />
+                <img src="/image/docker.png" alt="" />
+
+              </div>
+             
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div className=" flex justify-center items-center flex-col mt-[100px] p-5">
+        <h2 className="font-bold text-accent mb-5 p-10">PORTFOLIO</h2>
+
+        <Portfolio/>
+      </div>
+
+
+      <div className="flex flex-col justify-center p-5 mt-[100px]">
+
+        <h2 className="font-bold text-primary mb-5  text-center">EXPERIENCES</h2>
+
+        <div className="flex justify-center w-full p-10">
+          <ul className="timeline timeline-vertical p-10">
+            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+              <div className="timeline-start text-primary">02/2023 - Aujourd'hui</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box">
+                <h3 className="font-bold text-primary">Freelance Développeur Web</h3> <br/>
+                <div className="flex gap-5 mb-5 flex-wrap">
+
+                  <p className="badge badge-primary text-base-100">starCoiffure.fr</p>
+                  <p className="badge badge-primary text-base-100">starBeauté.fr</p>
+                  <p className="badge badge-primary text-base-100">statipro.fr</p>
+                  <p className="badge badge-primary text-base-100">bugBounty</p>
+
+                </div>
+                
+
+
+                <p>- Framework Symfony/ React/ Tailwind css/ Twig</p>
+                <p>- Développement d’application web</p>
+                <p>- Mise en place d’architecture backend (API, Logique métier, base de données) </p>
+                <p>- Développement Front end react</p>
+                <p>- Application de la méthode agile SCRUM</p>
+                <p>- Déploiement, maintenance et évolutions des projets</p>
+                <p>- Mise en place de maquette Figma</p>
+                <p>- Utilisation des outils ia pour génération d’images</p>
+
+                
+              </div>
+              <hr />
+            </li>
+            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">10/2022- 2023</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box">
+                <h3 className="font-bold text-primary">Freelance Formateur Développeur web</h3> <br/>
+                <div className="flex gap-5 mb-5">
+
+                  <p className="badge badge-primary text-base-100"> AFPA</p>
+                  <p className="badge badge-primary text-base-100"> SIMPLON</p>
+                  <p className="badge badge-primary text-base-100"> LeBocalAcademy</p>
+
+                </div>
+                <p>- Methode Agile Scrum</p>
+                <p>- HTML - CSS - JAVASCRIPT</p>
+                <p>- PHP</p>
+                <p>- MYSQL</p>
+                <p>- Programmation orienté objet</p>
+                <p>- Code orienté sécurité/Framework/Symfony/</p>
+                <p>- Methode MERISE</p>
+                <p>- RGPD</p>
+              </div>
+              <hr />
+            </li>
+            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">04/2022 – 09/2022</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box">
+                <h3 className="font-bold text-primary">CDI Développeur Web fullstack – Easyconnects</h3> <br/>
+                <div className="flex flex-wrap gap-5 mb-5">
+
+                  <p className="badge badge-primary text-base-100"> EasyConnects</p>
+                  <p className="badge badge-primary text-base-100"> SudInvestissement</p>
+                  <p className="badge badge-primary text-base-100"> LeCampusDigital</p>
+
+                </div>
+                <p>- Framework Symfony/ React/ Tailwind css/ Twig</p>
+                <p>- Création et gestion d'API</p>
+                <p>- Utilisation de service API, Signature PDF, Stripe</p>
+                <p>- Gestion des roles utilisateur, autorisations, authentifications</p>
+                <p>- Mise en place de serveurs web, sécurité applicative</p> 
+                <p>- Développement Front end REACT</p>
+                <p>- Application de la méthode agile SCRUM</p>
+                <p>- Déploiement, maintenance et évolutions des projets</p>
+                <p>- Mise en place de maquette Figma</p>
+                <p>- Utilisation des outils ia pour génération d’images</p>
+              </div>
+              <hr />
+            </li>
+            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">09/2020 - 04/2022</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box">
+                <h3 className="font-bold text-primary">CDD Formateur Développeur web</h3> <br/>
+                <div className="flex gap-5 mb-5">
+                  <p className="badge badge-primary text-base-100">AFPA</p>
+                </div>
+
+                <p>- Développement d’application web</p>
+                <p>- Mise en place d’architecture backend (API, Logique métier, base de données) </p>
+                <p>- Développement Front end reactjs</p>
+                <p>- Application de la méthode agile SCRUM</p>
+                <p>- Déploiement, maintenance et évolutions des projets</p>
+                <p>- Mise en place de maquette Figma</p>
+                <p>- Utilisation des outils ia pour génération d’images</p>
+              </div>
+              <hr />
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      
     </>
   );
 }

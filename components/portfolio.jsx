@@ -1,0 +1,65 @@
+'use client';
+import { useState } from "react";
+import project from "@/data/project";
+
+
+export default function Portfolio() {
+
+    
+    
+    const [page, setPage] = useState(0);
+    
+    function changePage(p)
+    {
+        return setPage(p);
+    }
+
+
+  return (
+    <div>        
+        <div className="flex justify-center gap-5 flex-wrap">
+
+            
+            { Object.values(project[page]).map(e => {
+                    return (<div className="card bg-base-100 w-96 shadow-sm">
+                        <figure>
+                            <img
+                            src={e.img}
+                            alt="Shoes" />
+                        </figure>
+                        <div className="card-body border border-base-200 gap-5">
+                            <h2 className="card-title">
+                           {e.title}
+                            <div className="badge badge-secondary">{e.tech}</div>
+                            </h2>
+                            <p>{e.description}</p>
+                            <div className="card-actions justify-end">
+                                {e.technos.map(a => {
+                                    return <div className="badge badge-outline">{a}</div>
+                                })}
+                                
+                            </div>
+                        </div>
+                    </div>);
+            })}
+            
+
+            
+        </div>
+
+        <div className="join flex justify-center mt-5">
+            <form action="">
+                <input onClick={() => changePage(0)}
+                className="join-item btn btn-square"
+                type="radio"
+                name="options"
+                aria-label="1"
+                checked={page === 0 ? 'checked' : ''}/>
+                <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" onClick={() => changePage(1)} checked={page === 1 ? 'checked' : ''}/>
+            </form>
+            
+        </div>
+    </div>
+  );
+
+}

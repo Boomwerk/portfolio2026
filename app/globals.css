@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
 @plugin "daisyui/theme" {
   name: "boomwerk";
   default: true;
@@ -36,7 +37,6 @@
   --noise: 1;
 }
 
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins), sans-serif;
 }
@@ -47,6 +47,11 @@ h1 {
 
 h2{
   font-size: 30px;
+  font-weight: semi-bold;
+}
+
+h3{
+  font-size: 25px;
   font-weight: semi-bold;
 }
 
