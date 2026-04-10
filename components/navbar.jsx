@@ -48,7 +48,9 @@ const navbar = () => {
                 <ul className={`${isOpen ? 'flex flex-col items-center py-5 gap-4':'flex gap-4 px-5'}`}>
                     <li><a href="#home" className="text-accent border-b border-accent">Accueil</a></li>
                     <li><a href="#about" className="text-neutral">À Propos</a></li>
+                    <li><a href="#competences" className="text-neutral">Compétences</a></li>
                     <li><a href="#projects" className="text-neutral">Portfolio</a></li>
+                    <li><a href="#experiences" className="text-neutral">Experiences</a></li>
                     <li><a href="#contact" className="text-neutral">Contact</a></li>
                 </ul>
             </div>

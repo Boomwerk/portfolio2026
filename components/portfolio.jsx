@@ -5,8 +5,6 @@ import project from "@/data/project";
 
 export default function Portfolio() {
 
-    
-    
     const [page, setPage] = useState(0);
     
     function changePage(p)
