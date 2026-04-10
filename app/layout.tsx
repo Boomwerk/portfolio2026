@@ -15,8 +15,8 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "Protfolio Développeur web",
-  description: "Site de présentation de projet web",
+  title: "Développeur Web Full Stack | Symfony, React & PHP",
+  description: "Développeur web full stack spécialisé en Symfony, React et PHP. Expérience en formation, développement d’applications web et projets e-commerce en freelance.",
 };
 
 export default function RootLayout({
@@ -27,6 +27,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-base-100">{children}</body>
+      <script>
+        AOS.init();
+      </script>
     </html>
   );
 }

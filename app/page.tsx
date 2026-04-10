@@ -56,9 +56,10 @@ export default function Home() {
 
       <div className="bg-base-100 flex justify-around items-center w-full md:flex-row flex-col gap-5 p-5 mb-[150px]" id="about">
 
-        <div className="w-lg lg:p-5 p-10">
+        <div className="w-lg lg:p-5 p-10"  data-aos="fade-left">
           <img src="/image/apercuProjet.png" alt="" className=""/>
         </div>
+
         <div className="w-lg lg:p-5 p-10">
           <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
           <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/>
