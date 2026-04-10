@@ -49,13 +49,13 @@ export default function Portfolio() {
 
         <div className="join flex justify-center mt-5">
             <form action="">
-                <input onClick={() => changePage(0)}
+                <input onChange={() => changePage(0)}
                 className="join-item btn btn-square"
                 type="radio"
                 name="options"
                 aria-label="1"
                 checked={page === 0 ? 'checked' : ''}/>
-                <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" onClick={() => changePage(1)} checked={page === 1 ? 'checked' : ''}/>
+                <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" onChange={() => changePage(1)} checked={page === 1 ? 'checked' : ''}/>
             </form>
             
         </div>
