@@ -328,7 +328,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
       </div>
 
-      <footer className="bg-base-300 p-5 flex justify-center gap-2">
+      <footer className="bg-base-300 p-5 flex justify-center gap-2 flex-wrap">
         <a href="/mention-legales" className="text-sm text-center">
           Mentions Légales
         </a>
