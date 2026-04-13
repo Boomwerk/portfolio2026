@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Install dependencies
         run: npm install
@@ -28,3 +33,10 @@ jobs:
           local-dir: ./
           server-dir: /www/
           protocol: ftps
+          security: loose
+          exclude: |
+            .github/
+            node_modules/
+            .git/
+            .vscode/
+            .env*
