@@ -19,7 +19,7 @@ export default function Portfolio() {
 
             
             { Object.values(project[page]).map((e,index) => {
-                    return (<div key={index}className="card bg-base-100 w-96 shadow-sm">
+                    return (<div key={index}className="card bg-base-100 w-96 shadow-sm" data-aos="flip-right">
                         <figure>
                             <img
                             src={e.img}

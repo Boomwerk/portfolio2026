@@ -24,12 +24,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="fr" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-base-100">{children}</body>
-      <script>
-        AOS.init();
-      </script>
     </html>
   );
 }
