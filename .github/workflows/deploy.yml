@@ -3,7 +3,7 @@ name: deploy to alwaysdata
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build-and-deploy:
