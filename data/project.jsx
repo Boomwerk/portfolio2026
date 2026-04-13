@@ -19,7 +19,7 @@ const project = [
         },
         "3":
         {
-            "img": "/image/star-beaute.png",
+            "img": "/image/Star-beaute.png",
             "title" : "E-commerce: Star Beauté",
             "tech" : "CMS",
             "description": "Fonctionnalité: Entretien, gestion des sauvegarde, ajouts produits, correction de bug, mise à jour",
