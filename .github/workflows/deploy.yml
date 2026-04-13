@@ -28,5 +28,3 @@ jobs:
           local-dir: ./
           server-dir: /www/
           protocol: ftps
-          passive: true
-          security: loose
