@@ -34,9 +34,18 @@ jobs:
           server-dir: /www/
           protocol: ftps
           security: loose
-          exclude: |
-            .github/
-            node_modules/
-            .git/
-            .vscode/
-            .env*
+          exclude: '
+            - **/node_modules/**
+            - **/node_modules*/**
+            - **/.git/**
+            - **/.git*/**
+            - **/.github/**
+            - **/.github*/**
+            - **/.vscode/**
+            - **/.vscode*/**
+            - **/.next/**
+            - **/.next*/**
+            - **/.env**/**
+            - **/.env*/**
+            - **/README.md**
+            '
