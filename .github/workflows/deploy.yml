@@ -1,51 +1,47 @@
-name: deploy to alwaysdata
+# name: Deploy Next.js App to AlwaysData
 
-on:
-  push:
-    branches:
-      - dev
+# on:
+#   push:
+#     branches:
+#       - dev
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
 
-      - name: Install dependencies
-        run: npm install
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v4
 
-      - name: Build the project
-        run: npm run build
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '24'
+#           cache: 'npm'
 
-      - name: Deploy to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /www/
-          protocol: ftps
-          security: loose
-          exclude: '
-            - **/node_modules/**
-            - **/node_modules*/**
-            - **/.git/**
-            - **/.git*/**
-            - **/.github/**
-            - **/.github*/**
-            - **/.vscode/**
-            - **/.vscode*/**
-            - **/.next/**
-            - **/.next*/**
-            - **/.env**/**
-            - **/.env*/**
-            - **/README.md**
-            '
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Build Next.js app
+#         run: npm run build
+
+#       - name: Install SSH Key
+#         uses: shimataro/ssh-key-action@v2
+#         with:
+#           key: ${{ secrets.SSH_PRIVATE_KEY }}
+#           known_hosts: unecessary
+
+#       - name: Deploy with RSYNC
+#         run: |
+#           rsync -avz --delete \
+#             --exclude '.git/' \
+#             --exclude '.github/' \
+#             --exclude 'node_modules/' \
+#             -e "ssh -o StrictHostKeyChecking=no" \
+#             ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:www/
+
+#       - name: Restart Alwaysdata Site
+#         run: |
+#           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
+#           "cd www/ && npm install --production && alwaysdata-api site restart --id [VOTRE_ID_SITE]"
