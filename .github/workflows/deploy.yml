@@ -33,6 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
           server-dir: /www/
-          protocol: ftps
-          port: 21
-          secure: passive
+          protocol: ftp
+         
