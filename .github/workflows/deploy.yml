@@ -34,3 +34,5 @@ jobs:
           local-dir: dist/
           server-dir: /www/
           protocol: ftps
+          port: 21
+          secure: passive
