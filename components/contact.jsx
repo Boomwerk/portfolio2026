@@ -4,59 +4,7 @@ import { useState } from "react";
 
 export default function contact(){
 
-    const [data, setData] = useState({
-        email:"",
-        subject:"",
-        message:""
-    });
-
-
-    const [alert, setAlert] = useState(null);
-    
-
-    const handledata = (e) => {
-
-        setData({
-            ...data,
-            [e.target.name]: e.target.value
-        });
-
-    }
-
-    const submit = (e) => {
-        e.preventDefault();
-
-        try{
-
-            fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "Application/json"
-                },
-                body: JSON.stringify(data)
-            })
-            .then(e => {return e.json()})
-            .then(f => {
-                if(f.success){
-                    setAlert({type:"success", message: "Le message a bien été envoyer"});
-                    setTimeout(() => {
-                        setAlert(null)
-                    }, 3000);
-                }else{
-                    setAlert({type:"error", message: "Une erreur est survenue !"});
-                    setTimeout(() => {
-                        setAlert(null)
-                    }, 3000);
-                }
-            }  )
-            
-        }catch(error){
-            console.error(error);
-
-        }
-    }
-
-
+   
 
 
     return(
