@@ -1,12 +1,15 @@
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect,useState } from 'react';
-import Navbar from '../components/Navbar';
-import Portfolio from '../components/Portfolio';
-import Contact from '../components/Contact.jsx';
+import { useEffect, useState } from 'react';
+import Navbar from '../components/navbar';
+import Portfolio from '../components/portfolio';
+import Contact from '../components/contact';
 
 function App() {
+
+  const [modal, setModal] = useState(false);
+
 
   useEffect(() => {
     AOS.init({
@@ -14,14 +17,9 @@ function App() {
     });
   }, []);
 
-  const [modal, setModal] = useState(false);
-
-  
-  const openModal = () => {
-    setModal(true);
-  }
-
-
+  const toggleModal = () => {
+    setModal(!modal);
+  };
 
   return (
      <>
@@ -336,14 +334,14 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
       </div>
 
       <footer className="bg-base-300 p-5 flex justify-center gap-2 flex-wrap overflow-hidden">
-        <p className="text-sm text-center" onClick={() => document.getElementById('my_modal_1').showModal()}>
+        <p className="text-sm text-center cursor-pointer" onClick={() => toggleModal()}>
           Mentions Légales
         </p>
-        <p className="text-sm text-center">- © 2026 Yannis A. Tous droits réservés.</p>
-        <dialog id="my_modal_1" className="modal">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">Mentions Légales</h3>
-             <h2>Éditeur du site</h2>
+        <dialog id="legal-modal" className="modal" open={modal}>
+          <div className="modal-box w-11/12 max-w-5xl">
+             <h1>Mentions Légales</h1>
+
+            <h2>Éditeur du site</h2>
             <p>
                 <strong>Nom de la société :</strong> boomwerk<br/>
                 <strong>Adresse :</strong> Manosque<br/>
@@ -373,12 +371,13 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
             </p>
             <div className="modal-action">
               <form method="dialog">
-                {/* if there is a button in form, it will close the modal */}
-                <button className="btn">Fermer</button>
+                {/* if there is a button, it will close the modal */}
+                <button className="btn" onClick={() => toggleModal()}>Fermer</button>
               </form>
             </div>
           </div>
         </dialog>
+        <p className="text-sm text-center">- © 2026 Yannis A. Tous droits réservés.</p>
       </footer>
       
     </>
