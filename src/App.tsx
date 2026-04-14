@@ -1,7 +1,7 @@
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import Navbar from '../components/Navbar';
 import Portfolio from '../components/Portfolio';
 import Contact from '../components/Contact.jsx';
@@ -13,6 +13,15 @@ function App() {
       duration : 800
     });
   }, []);
+
+  const [modal, setModal] = useState(false);
+
+  
+  const openModal = () => {
+    setModal(true);
+  }
+
+
 
   return (
      <>
@@ -327,10 +336,49 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
       </div>
 
       <footer className="bg-base-300 p-5 flex justify-center gap-2 flex-wrap overflow-hidden">
-        <a href="/mention-legales" className="text-sm text-center">
+        <p className="text-sm text-center" onClick={() => document.getElementById('my_modal_1').showModal()}>
           Mentions Légales
-        </a>
+        </p>
         <p className="text-sm text-center">- © 2026 Yannis A. Tous droits réservés.</p>
+        <dialog id="my_modal_1" className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-lg">Mentions Légales</h3>
+             <h2>Éditeur du site</h2>
+            <p>
+                <strong>Nom de la société :</strong> boomwerk<br/>
+                <strong>Adresse :</strong> Manosque<br/>
+                <strong>Directeur de publication :</strong> boomwerk<br/>
+                <strong>Email :</strong> <a href="mailto:boomwerk@outlook.fr">boomwerk@outlook.fr</a><br/>
+            </p>
+
+            <h2>Hébergement</h2>
+            <p>
+                Le site est hébergé par <strong>ALWAYSDATA</strong>.<br/>
+                Adresse : 91 rue du Faubourg Saint Honoré, 75008 Paris, France
+            </p>
+
+            <h2>Propriété intellectuelle</h2>
+            <p>
+                Tous les contenus présents sur ce site (textes, images, graphiques, etc.) sont la propriété de <strong>Boomwerk</strong>. Toute reproduction, même partielle, est interdite sans autorisation préalable.
+            </p>
+
+            <h2>Données personnelles</h2>
+            <p>
+                Les données personnelles collectées sur le site sont déclarées à la CNIL. Les utilisateurs disposent d un droit d'accès, de rectification et de suppression de leurs données personnelles.
+            </p>
+
+            <h2>Contact</h2>
+            <p>
+                Pour toute question, vous pouvez me contacter via l'email mentionné ci-dessus.
+            </p>
+            <div className="modal-action">
+              <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn">Fermer</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </footer>
       
     </>
