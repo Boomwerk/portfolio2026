@@ -2,7 +2,7 @@ import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from 'react';
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbar.tsx';
 import Portfolio from '../components/portfolio';
 import Contact from '../components/contact';
 
@@ -76,7 +76,7 @@ function App() {
           </div>
       </div>
 
-      <div className="bg-base-100 mb-[150px] flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
+      <div className="bg-base-100 mb-37.5 flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
 
         <div className="p-5 md:w-md" data-aos="fade-right">
           <img src="/image/apercuProjet.png" alt="" className=""/>
@@ -95,7 +95,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
       </div>
 
       <div className="flex flex-col justify-center items-center w-full overflow-hidden" id="competences">
-        <h2 className="font-bold text-accent mb-[100px]">LES COMPETENCES</h2>
+        <h2 className="font-bold text-accent mb-25">LES COMPETENCES</h2>
    
         <div className="tabs tabs-border flex justify-center mt-5 w-full" data-aos="zoom-in-left">
           {/* first tab */}
@@ -153,14 +153,14 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
       </div>
 
-      <div className="flex justify-center items-center flex-col mt-[100px] p-5 overflow-hidden" id="projects" >
+      <div className="flex justify-center items-center flex-col mt-25 p-5 overflow-hidden" id="projects" >
         <h2 className="font-bold text-accent mb-5 p-10">PORTFOLIO</h2>
 
         <Portfolio/>
       </div>
 
 
-      <div className="flex flex-col justify-center p-5 mt-[100px] overflow-hidden" id="experiences">
+      <div className="flex flex-col justify-center p-5 mt-25 overflow-hidden" id="experiences">
 
         <h2 className="font-bold text-primary mb-5 text-center">EXPERIENCES</h2>
 

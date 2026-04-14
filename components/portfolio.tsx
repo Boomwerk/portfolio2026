@@ -1,13 +1,13 @@
 'use client';
 import { useState } from "react";
-import project from "../data/project";
+import project from "../data/project.tsx";
 
 
 export default function Portfolio() {
 
     const [page, setPage] = useState(0);
 
-    function changePage(p)
+    function changePage(p: number)
     {
         return setPage(p);
     }
@@ -52,8 +52,8 @@ export default function Portfolio() {
                 type="radio"
                 name="options"
                 aria-label="1"
-                checked={page === 0 ? 'checked' : ''}/>
-                <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" onChange={() => changePage(1)} checked={page === 1 ? 'checked' : ''}/>
+                checked={page === 0 ? true : false}/>
+                <input className="join-item btn btn-square" type="radio" name="options" aria-label="2" onChange={() => changePage(1)} checked={page === 1 ? true : false}/>
             </form>
             
         </div>

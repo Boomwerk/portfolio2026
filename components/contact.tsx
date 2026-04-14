@@ -1,5 +1,4 @@
 'use client';
-import { useState } from "react";
 
 
 export default function contact(){
@@ -15,7 +14,7 @@ export default function contact(){
             <div className="flex flex-wrap justify-center items-center w-full gap-5">
 
                 <div className="w-full md:w-1/5 p-10 flex justify-center items-center">
-                    <img src="/image/contact.svg" alt="" className="w-[200px] md:w-sm" />
+                    <img src="/image/contact.svg" alt="" className="w-50 md:w-sm" />
                 </div>
 
                 

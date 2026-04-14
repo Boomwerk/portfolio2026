@@ -10,7 +10,7 @@ const navbar = () => {
     useEffect(() => {
         const media = window.matchMedia("(max-width: 640px)");
 
-        const handleResize = (e) => {
+        const handleResize = (e: { matches: boolean }) => {
             if (e.matches) {
                 setIsOpen(false);
             }
@@ -46,7 +46,7 @@ const navbar = () => {
             
             <div className={`${isOpen ? 'absolute top-15 left-0 w-full content-center items-center bg-base-100 animate__animated animate__fadeInDown' : 'hidden'} w-1/2 items-center justify-end lg:flex`}>
                 <ul className={`${isOpen ? 'flex flex-col items-center py-5 gap-4':'flex gap-4 px-5'}`}>
-                    <li className="w-[66px]"><a href="#about" className="text-neutral hover:border-b-2 hover:border-b-accent">À Propos</a></li>
+                    <li className="w-16.5"><a href="#about" className="text-neutral hover:border-b-2 hover:border-b-accent">À Propos</a></li>
                     <li><a href="#competences" className="text-neutral hover:border-b-2 hover:border-b-accent">Compétences</a></li>
                     <li><a href="#projects" className="text-neutral hover:border-b-2 hover:border-b-accent">Portfolio</a></li>
                     <li><a href="#experiences" className="text-neutral hover:border-b-2 hover:border-b-accent">Experiences</a></li>
