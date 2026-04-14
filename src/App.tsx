@@ -1,14 +1,12 @@
-'use client';
-import Navbar from "@/components/navbar";
-import Portfolio from "@/components/portfolio";
-import Contact from "@/components/contact";
-import { useEffect } from "react";
+import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact.jsx';
 
-
-export default function Home() {
-
+function App() {
 
   useEffect(() => {
     AOS.init({
@@ -17,13 +15,13 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+     <>
       <Navbar/>
 
       <div className="bg-base-100 p-5 flex justify-center w-full flex-col md:flex-row h-screen" id="home">
          
           <div className="flex justify-center min-w-1/2">
-              <div className="flex flex-col min-w-3/4 justify-center px-5 ">
+              <div className="flex flex-col min-w-3/4 justify-center  ">
                 <h1 className="text-4xl font-bold ">Développeur Web <br/><span className="text-accent">Full Stack</span></h1>
                 <p className="text-lg mt-4 text-start">Je conçois et développe des applications web 
                   <br/>performantes avec <span className="text-accent">Symfony</span>.
@@ -71,13 +69,13 @@ export default function Home() {
           </div>
       </div>
 
-      <div className="bg-base-100 flex justify-around items-center w-full md:flex-row flex-col gap-5 p-5 mb-[150px]" id="about">
+      <div className="bg-base-100 mb-[150px] flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
 
-        <div className="w-lg lg:p-5 p-10" data-aos="fade-right">
+        <div className="p-5 md:w-md" data-aos="fade-right">
           <img src="/image/apercuProjet.png" alt="" className=""/>
         </div>
 
-        <div className="w-lg lg:p-5 p-10" data-aos="fade-left">
+        <div className="p-5 md:w-xl" data-aos="fade-left">
           <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
           <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/>
 
@@ -89,7 +87,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
       </div>
 
-      <div className="flex flex-col justify-center items-center w-full " id="competences">
+      <div className="flex flex-col justify-center items-center w-full overflow-hidden" id="competences">
         <h2 className="font-bold text-accent mb-[100px]">LES COMPETENCES</h2>
    
         <div className="tabs tabs-border flex justify-center mt-5 w-full" data-aos="zoom-in-left">
@@ -148,20 +146,20 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
       </div>
 
-      <div className=" flex justify-center items-center flex-col mt-[100px] p-5" id="projects" >
+      <div className="flex justify-center items-center flex-col mt-[100px] p-5 overflow-hidden" id="projects" >
         <h2 className="font-bold text-accent mb-5 p-10">PORTFOLIO</h2>
 
         <Portfolio/>
       </div>
 
 
-      <div className="flex flex-col justify-center p-5 mt-[100px]" id="experiences">
+      <div className="flex flex-col justify-center p-5 mt-[100px] overflow-hidden" id="experiences">
 
         <h2 className="font-bold text-primary mb-5 text-center">EXPERIENCES</h2>
 
         <div className="flex justify-center w-full p-10">
-          <ul className="timeline timeline-vertical p-10">
-            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+          <ul className="timeline timeline-vertical">
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
               <div className="timeline-start text-primary">02/2023 - Aujourd'hui</div>
               <div className="timeline-middle">
                 <svg
@@ -177,7 +175,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                   />
                 </svg>
               </div>
-              <div className="timeline-end timeline-box" data-aos="fade-left">
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
                 <h3 className="font-bold text-primary">Freelance Développeur Web</h3> <br/>
                 <div className="flex gap-5 mb-5 flex-wrap">
 
@@ -203,7 +201,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
               </div>
               <hr />
             </li>
-            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
               <hr />
               <div className="timeline-start text-primary">10/2022- 2023</div>
               <div className="timeline-middle">
@@ -220,9 +218,9 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                   />
                 </svg>
               </div>
-              <div className="timeline-end timeline-box" data-aos="fade-left">
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
                 <h3 className="font-bold text-primary">Freelance Formateur Développeur web</h3> <br/>
-                <div className="flex gap-5 mb-5">
+                <div className="flex flex-wrap gap-5 mb-5">
 
                   <p className="badge badge-primary text-base-100"> AFPA</p>
                   <p className="badge badge-primary text-base-100"> SIMPLON</p>
@@ -240,7 +238,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
               </div>
               <hr />
             </li>
-            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
               <hr />
               <div className="timeline-start text-primary">04/2022 – 09/2022</div>
               <div className="timeline-middle">
@@ -257,7 +255,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                   />
                 </svg>
               </div>
-              <div className="timeline-end timeline-box" data-aos="fade-left">
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
                 <h3 className="font-bold text-primary">CDI Développeur Web fullstack – Easyconnects</h3> <br/>
                 <div className="flex flex-wrap gap-5 mb-5">
 
@@ -279,7 +277,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
               </div>
               <hr />
             </li>
-            <li className="flex flex-col lg:grid px-5 py-10 lg:py-0">
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
               <hr />
               <div className="timeline-start text-primary">09/2020 - 04/2022</div>
               <div className="timeline-middle">
@@ -296,7 +294,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                   />
                 </svg>
               </div>
-              <div className="timeline-end timeline-box" data-aos="fade-left">
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
                 <h3 className="font-bold text-primary">CDD Formateur Développeur web</h3> <br/>
                 <div className="flex gap-5 mb-5">
                   <p className="badge badge-primary text-base-100">AFPA</p>
@@ -319,7 +317,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
       <Contact/>
 
-      <div className="fixed right-5 bottom-5 w-10 h-10 bg-primary rounded-4xl flex justify-center items-center">
+      <div className="fixed right-5 bottom-5 w-8 h-8 bg-primary rounded-4xl flex justify-center items-center">
         <a href="/" className="text-base-100">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
@@ -328,7 +326,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
       </div>
 
-      <footer className="bg-base-300 p-5 flex justify-center gap-2 flex-wrap">
+      <footer className="bg-base-300 p-5 flex justify-center gap-2 flex-wrap overflow-hidden">
         <a href="/mention-legales" className="text-sm text-center">
           Mentions Légales
         </a>
@@ -336,5 +334,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
       </footer>
       
     </>
-  );
+  )
 }
+
+export default App

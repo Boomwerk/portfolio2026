@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import project from "@/data/project";
+import project from "../data/project";
 
 
 export default function Portfolio() {
@@ -15,11 +15,11 @@ export default function Portfolio() {
 
   return (
     <div>        
-        <div className="flex justify-center gap-5 flex-wrap">
+        <div className="flex flex-wrap gap-5">
 
             
             { Object.values(project[page]).map((e,index) => {
-                    return (<div key={index}className="card bg-base-100 w-96 shadow-sm" data-aos="flip-right">
+                    return (<div key={index} className="card bg-base-100 shadow-sm md:w-96" data-aos="flip-right">
                         <figure>
                             <img
                             src={e.img}
