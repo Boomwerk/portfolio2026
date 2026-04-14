@@ -72,14 +72,14 @@ function App() {
           </div>
 
           <div className="p-5 flex justify-center items-center mt-10 min-w-2/5">
-            <img src="/image/undraw_programming_j1zw.svg" alt="" width="400px" />
+            <img src="public/image/undraw_programming_j1zw.svg" alt="" width="400px" />
           </div>
       </div>
 
       <div className="bg-base-100 mb-37.5 flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
 
         <div className="p-5 md:w-md" data-aos="fade-right">
-          <img src="/image/apercuProjet.png" alt="" className=""/>
+          <img src="public/image/apercuProjet.png" alt="" className=""/>
         </div>
 
         <div className="p-5 md:w-xl" data-aos="fade-left">
@@ -106,15 +106,15 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
             <div className="flex flex-col gap-5 w-full">
 
               <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row">
-                <img src="/image/react.png" alt="" />
-                <img src="/image/html.png" alt="" />
-                <img src="/image/css.png" alt="" />
+                <img src="public/image/react.png" alt="" />
+                <img src="public/image/html.png" alt="" />
+                <img src="public/image/css.png" alt="" />
 
               </div>
               <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row mt-5">
-                <img src="/image/js.png" alt="" />
-                <img src="/image/tailwind.png" alt="" />
-                <img src="/image/bootstrap.png" alt="" />
+                <img src="public/image/js.png" alt="" />
+                <img src="public/image/tailwind.png" alt="" />
+                <img src="public/image/bootstrap.png" alt="" />
               </div>
             </div>
 
@@ -126,9 +126,9 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
             
 
             <div className="w-full flex justify-center items-center gap-10 flex-col md:flex-row">
-              <img src="/image/php.png" alt="" />
-              <img src="/image/symfony.png" alt="" />
-              <img src="/image/mysql.png" alt="" />
+              <img src="public/image/php.png" alt="" />
+              <img src="public/image/symfony.png" alt="" />
+              <img src="public/image/mysql.png" alt="" />
 
             </div>
               
@@ -141,9 +141,9 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
             <div className="flex flex-col gap-5">
 
               <div className="w-full flex justify-center items-center gap-10 flex-col lg:flex-row mt-5">
-                <img src="/image/git.png" alt="" />
-                <img src="/image/trello.png" alt="" />
-                <img src="/image/docker.png" alt="" />
+                <img src="public/image/git.png" alt="" />
+                <img src="public/image/trello.png" alt="" />
+                <img src="public/image/docker.png" alt="" />
 
               </div>
              
