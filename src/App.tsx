@@ -1,3 +1,5 @@
+import '@fontsource-variable/sora/wght.css';
+import '@fontsource-variable/space-grotesk/wght.css';
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -22,79 +24,110 @@ function App() {
   };
 
   return (
-     <>
+     <section className='bg-base-200'>
       <Navbar/>
 
-      <div className="bg-base-100 p-5 flex justify-center w-full flex-col md:flex-row h-screen" id="home">
-         
-          <div className="flex justify-center min-w-1/2">
-              <div className="flex flex-col min-w-3/4 justify-center  ">
-                <h1 className="text-4xl font-bold ">Développeur Web <br/><span className="text-accent">Full Stack</span></h1>
-                <p className="text-lg mt-4 text-start">Je conçois et développe des applications web 
-                  <br/>performantes avec <span className="text-accent">Symfony</span>.
-                </p>
+      <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto flex-col md:flex-row min-h-screen pt-28 pb-24 px-6" id="home">
 
-                <p className="flex text-accent items-center gap-2 mt-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className=" w-7 fill-accent">
-                    <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
-                  </svg>
-                    Manosque, Aix en provence, Marseille et alentours
-                </p>
+        <div className="">
+          <div className="flex flex-col justify-center">
+              <div className='flex items-center'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary mr-2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                </svg>
+                <p className='text-primary py-5'> BIENVENU DANS MON MONDE </p>
+              </div>
 
-                <div className="w-50 flex content-around items-center gap-5 mt-4">
+              <div>
+                <h1 className="text-5xl sm:text-7xl font-bold ">Salut, moi c'est <span className='text-primary'>Yannis</span></h1>
+              </div>
+              
+              <p className='text-xl sm:text-3xl pt-4 flex gap-2'>Développeur FullStack 
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-9 text-primary">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
+                </svg>
+              </p>
 
-                  <div className="flex items-center align-items rounded-full bg-accent p-2">
-                     <a href="https://www.linkedin.com/in/yannis-a-65a55b196/" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin fill-base-100" viewBox="0 0 16 16">
-                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                      </svg>
-                    </a>
+              <p className="text-md sm:text-lg mt-4 text-start">Développeur full-stack basé à La Ciotat. J'ai livré plusieurs projets - applications web, e-commerce, saas, e-learning. Je travaille vite, je fais attention aux détails.</p>
+
+              <div className='p-4 border-s-4 rounded border-primary my-4'>
+                <p className='italic'>" Je crois en ce que je peux apprendre à faire, pas seulement en ce que je sais déjà faire. "</p>
+              </div>
+
+              <p className="flex text-primary items-center gap-2 my-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className=" w-5 fill-primary">
+                  <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+                </svg>
+                  La Ciotat
+              </p>
+
+              <div className='flex gap-5 flex-wrap'>
+
+                <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
+
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                    </svg>
                   </div>
 
-                  <div className="flex items-center align-items rounded-full bg-accent p-2">
-                    <a href="https://github.com/Boomwerk" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github fill-base-100" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                      </svg>
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center align-items rounded-full bg-accent p-2">
-                    <a href="https://x.com/boomwerkdev" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x fill-base-100" viewBox="0 0 16 16">
-                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-                      </svg>
-                    </a>
+                  <div className='flex flex-col'>
+                    <p className='font-bold text-md'>3+</p>
+                    <p className='text-xs'>Années d'Experiences</p>
                   </div>
 
                 </div>
+
+                <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
+
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                    </svg>
+                  </div>
+
+                  <div className='flex flex-col'>
+                    <p className='font-bold text-md'>15+</p>
+                    <p className='text-xs'>Projets réalisés</p>
+                  </div>
+                </div>
+
               </div>
-          </div>
 
-          <div className="p-5 flex justify-center items-center mt-10 min-w-2/5">
+              <div className='flex gap-4 mt-15'>
+                <a href="" className='px-5 py-2 bg-primary rounded-lg '>Voir Mon Travail</a>
+                <a href="" className='px-5 py-2 rounded-lg card-border border-base-300 '>Me Contacter</a>
+                <a href="">
+                  
+                </a>
+                <a href=""></a>
+
+              </div>
+
+
+            </div>
+        </div>
+
+        <div className="flex justify-center items-center mt-10 ">
             <img src="/image/undraw_programming_j1zw.svg" alt="image de programmation" width="400px" />
+        </div>
+      </div>
+
+        <div className="bg-base-100 mb-37.5 flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
+
+          <div className="p-5 md:w-md" data-aos="fade-right">
+            <img src="/image/apercuProjet.png" alt="image d'aperçu du projet" />
           </div>
-      </div>
 
-      <div className="bg-base-100 mb-37.5 flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
+          <div className="p-5 md:w-xl" data-aos="fade-left">
+            <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
+            <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/> Autonome, j'ai mené plusieurs projets de A à Z, allant de sites WordPress à une plateforme de formation en ligne.<br/><br/> Je souhaite aujourd'hui intégrer une équipe afin de collaborer sur des projets plus ambitieux et continuer à évoluer.</p>
+          </div>
 
-        <div className="p-5 md:w-md" data-aos="fade-right">
-          <img src="/image/apercuProjet.png" alt="image d'aperçu du projet" />
+
         </div>
 
-        <div className="p-5 md:w-xl" data-aos="fade-left">
-          <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
-          <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/>
-
-Autonome, j’ai mené plusieurs projets de A à Z, allant de sites WordPress à une plateforme de formation en ligne.<br/><br/>
-
-Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des projets plus ambitieux et continuer à évoluer.</p>
-        </div>
-
-
-      </div>
-
-      <div className="flex flex-col justify-center items-center w-full overflow-hidden" id="competences">
+        <div className="flex flex-col justify-center items-center w-full overflow-hidden" id="competences">
         <h2 className="font-bold text-accent mb-25">LES COMPETENCES</h2>
    
         <div className="tabs tabs-border flex justify-center mt-5 w-full" data-aos="zoom-in-left">
@@ -135,6 +168,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
      
 
           </div>
+
           {/* 3 tab */}
           <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Gestion de projet" />
           <div className="tab-content bg-base-100 p-10">
@@ -196,13 +230,13 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
 
 
                 <p>- Framework Symfony/ React/ Tailwind css/ Twig</p>
-                <p>- Développement d’application web</p>
-                <p>- Mise en place d’architecture backend (API, Logique métier, base de données) </p>
+                <p>- Développement d'application web</p>
+                <p>- Mise en place d'architecture backend (API, Logique métier, base de données) </p>
                 <p>- Développement Front end react</p>
                 <p>- Application de la méthode agile SCRUM</p>
                 <p>- Déploiement, maintenance et évolutions des projets</p>
                 <p>- Mise en place de maquette Figma</p>
-                <p>- Utilisation des outils ia pour génération d’images</p>
+                <p>- Utilisation des outils ia pour génération d'images</p>
 
                 
               </div>
@@ -280,7 +314,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                 <p>- Application de la méthode agile SCRUM</p>
                 <p>- Déploiement, maintenance et évolutions des projets</p>
                 <p>- Mise en place de maquette Figma</p>
-                <p>- Utilisation des outils ia pour génération d’images</p>
+                <p>- Utilisation des outils ia pour génération d'images</p>
               </div>
               <hr />
             </li>
@@ -307,13 +341,13 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                   <p className="badge badge-primary text-base-100">AFPA</p>
                 </div>
 
-                <p>- Développement d’application web</p>
-                <p>- Mise en place d’architecture backend (API, Logique métier, base de données) </p>
+                <p>- Développement d'application web</p>
+                <p>- Mise en place d'architecture backend (API, Logique métier, base de données) </p>
                 <p>- Développement Front end reactjs</p>
                 <p>- Application de la méthode agile SCRUM</p>
                 <p>- Déploiement, maintenance et évolutions des projets</p>
                 <p>- Mise en place de maquette Figma</p>
-                <p>- Utilisation des outils ia pour génération d’images</p>
+                <p>- Utilisation des outils ia pour génération d'images</p>
               </div>
               <hr />
             </li>
@@ -380,7 +414,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
         <p className="text-sm text-center">- © 2026 Yannis A. Tous droits réservés.</p>
       </footer>
       
-    </>
+    </section>
   )
 }
 
