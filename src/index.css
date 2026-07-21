@@ -126,7 +126,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Sora Variable', sans-serif;
 }
 
+#test{
+  color: #FFFFFF;
+  text-shadow: 0px 0px 20px #c9886b
+;
+   /* text-shadow: 0 0 0px #cd7a53, 0 0 45px #cd7a53, 0 0 20px #FFF, 0 0 20px #cd7a53, 0 0 30px #cd7a53, 0 0 40px #cd7a53, 0 0 55px #cd7a53, 0 0 75px #cd7a53 */
+}
 
+.animate_gradient2{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  
+  --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--color-accent)) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  background-clip: text;
+}
 
 .animate_gradient
 {
@@ -134,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
     to right,
     #cd7a53 20%,
     #fa8e00 30%,
-    #cd5d01 70%,
+    #fa8e00 70%,
     #da7f4a 80%
   );
   -webkit-background-clip: text;
@@ -142,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   background-size: 500% auto;
-  animation: textShine 5s ease-in-out infinite alternate;
+  animation: textShine 3s ease-in-out infinite alternate;
 }
 
 @keyframes textShine {
@@ -152,4 +164,14 @@ h1, h2, h3, h4, h5, h6 {
     100% {
         background-position: 100% 50%;
     }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+
+  50% {
+    background-position: 100% 50%;
+  }
+  
+  100% { background-position: 0% 50%; }
 }
