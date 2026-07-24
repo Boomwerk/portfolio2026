@@ -10,10 +10,20 @@ import Contact from './components/contact.tsx';
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 import { motion } from "motion/react";
+import { IoIosColorPalette } from "react-icons/io";
+import { CgDatabase } from "react-icons/cg";
+import { IoGameControllerOutline } from "react-icons/io5";
+import { FaDesktop } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
+import { FaLongArrowAltRight } from "react-icons/fa";
+
+
+
+
+
+
 
 function App() {
-
-
 
   const [modal, setModal] = useState(false);
 
@@ -31,91 +41,96 @@ function App() {
   return (
     <section className='bg-base-200 overflow-hidden'>
       <Navbar/>
-
+      {/* SECTION HERO */}
       <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto flex-col md:flex-row min-h-screen pt-28 pb-24 px-6" id="home">
 
         <div className="">
+
           <div className="flex flex-col justify-center">
-              <div className='flex items-center'>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary mr-2 ">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
-                </svg>
-                <p className='text-primary py-5 animate_gradient'> BIENVENU DANS MON MONDE </p>
-              </div>
 
-              <div>
-                <h1 className="text-5xl sm:text-7xl font-bold ">Salut, moi c'est <span 
-                  className='animate_gradient'
-                  >Yannis</span>
-                </h1>
-              </div>
-              
-              <p className='text-xl sm:text-3xl pt-4 flex gap-2'>Développeur FullStack 
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-9 text-primary">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
-                </svg>
-              </p>
+            <div className='flex items-center'>
 
-              <p className="text-md sm:text-lg mt-4 text-start">Développeur full-stack basé à La Ciotat. J'ai livré plusieurs projets - applications web, e-commerce, saas, e-learning. Je travaille vite, je fais attention aux détails.</p>
-
-              <div className='p-4 border-s-4 rounded border-primary my-4'>
-                <p className='italic'>" Je crois en ce que je peux apprendre à faire, pas seulement en ce que je sais déjà faire. "</p>
-              </div>
-
-              <p className="flex text-primary items-center gap-2 my-4">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className=" w-5 fill-primary">
-                  <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
-                </svg>
-                  La Ciotat
-              </p>
-
-              <div className='flex gap-5 flex-wrap'>
-
-                <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
-
-                  <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                    </svg>
-                  </div>
-
-                  <div className='flex flex-col'>
-                    <p className='font-bold text-md'>3+</p>
-                    <p className='text-xs'>Années d'Experiences</p>
-                  </div>
-
-                </div>
-
-                <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
-
-                  <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
-                    </svg>
-                  </div>
-
-                  <div className='flex flex-col'>
-                    <p className='font-bold text-md'>15+</p>
-                    <p className='text-xs'>Projets réalisés</p>
-                  </div>
-                </div>
-
-              </div>
-
-              <div className='flex gap-4 mt-15'>
-                <a href="" className='px-5 py-2 bg-primary rounded-lg text-neutral flex items-center justify-center hover:bg-base-100 hover:text-primary'>Voir Mon Travail</a>
-                <a href="" className='px-5 py-2 rounded-lg card-border border-base-300 flex justify-center items-center hover:bg-primary hover:text-base-100'>Contact</a>
-                <a href="" className='flex justify-center items-center rounded-full card-border border-base-300 hover:bg-primary hover:text-base-100 h-13 w-13'>
-                  <FaLinkedinIn />
-                </a>
-                <a href="" className='flex justify-center items-center h-13 w-13 rounded-full card-border border-base-300 hover:bg-primary hover:text-base-100 '>
-                  <FaGithub />
-                </a>
-
-              </div>
-
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary mr-2 ">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+              </svg>
+              <p className='text-primary py-5 animate_gradient'> BIENVENU DANS MON MONDE </p>
 
             </div>
+
+            <div>
+
+              <h1 className="text-5xl sm:text-7xl font-bold ">Salut, moi c'est <span 
+                className='animate_gradient'
+                >Yannis</span>
+              </h1>
+
+            </div>
+              
+            <p className='text-xl sm:text-3xl pt-4 flex gap-2'>Développeur FullStack 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-9 text-primary">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
+              </svg>
+            </p>
+
+            <p className="text-md sm:text-lg mt-4 text-start">Développeur full-stack basé à La Ciotat. J'ai livré plusieurs projets - applications web, e-commerce, saas, e-learning. Je travaille vite, je fais attention aux détails.</p>
+
+            <div className='p-4 border-s-4 rounded border-primary my-4'>
+              <p className='italic'>" Je crois en ce que je peux apprendre à faire, pas seulement en ce que je sais déjà faire. "</p>
+            </div>
+
+            <p className="flex text-primary items-center gap-2 my-4">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className=" w-5 fill-primary">
+                <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+              </svg>
+                La Ciotat
+            </p>
+
+            <div className='flex gap-5 flex-wrap'>
+
+              <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
+
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                  </svg>
+                </div>
+
+                <div className='flex flex-col'>
+                  <p className='font-bold text-md'>3+</p>
+                  <p className='text-xs'>Années d'Experiences</p>
+                </div>
+
+              </div>
+
+              <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
+
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                  </svg>
+                </div>
+
+                <div className='flex flex-col'>
+                  <p className='font-bold text-md'>15+</p>
+                  <p className='text-xs'>Projets réalisés</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div className='flex gap-4 mt-15'>
+              <a href="" className='px-5 py-2 bg-primary rounded-lg text-neutral flex items-center justify-center hover:bg-base-100 hover:text-primary'>Voir Mon Travail</a>
+              <a href="" className='px-5 py-2 rounded-lg card-border border-base-300 flex justify-center items-center hover:bg-primary hover:text-base-100'>Contact</a>
+              <a href="" className='flex justify-center items-center rounded-full card-border border-base-300 hover:bg-primary hover:text-base-100 h-13 w-13'>
+                <FaLinkedinIn />
+              </a>
+              <a href="" className='flex justify-center items-center h-13 w-13 rounded-full card-border border-base-300 hover:bg-primary hover:text-base-100 '>
+                <FaGithub />
+              </a>
+
+            </div>
+          </div>
+     
         </div>
         
         <div className="flex flex-col justify-center items-center">
@@ -127,17 +142,20 @@ function App() {
           </div>
 
           <div className='border border-primary/60 rounded-xl px-3 py-1 -mt-8 lg:-mr-50 bg-base-100 flex items-center gap-3'>
-            <div className='bg-primary w-3 h-3 rounded-full'>
-
-            </div>
+            <div className='bg-primary w-3 h-3 rounded-full'></div>
             <p className='text-sm'>
               Disponible ASAP
             </p>
-            </div>
+          </div>
            
         </div>
       </div>
+      <div className='flex flex-col justify-center items-center -mt-15 pb-10'>
+        <p>Défiler la page</p>
+        <FaArrowDown />
+      </div>
 
+      {/* BANDEAU */}
       <div className='w-[150%]'>
         <motion.div className='bg-base-100/80 card-border border-base-300 flex items-center gap-8 text-3xl py-3 overflow-hidden -ml-5'>
           <p>JAVASCRIPT</p>
@@ -163,88 +181,181 @@ function App() {
           <p>2026</p>
         </motion.div>
       </div>
-      
-      <div className="bg-base-100 mb-37.5 flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
 
-        <div className="p-5 md:w-md" data-aos="fade-right">
-          <img src="/image/apercuProjet.png" alt="image d'aperçu du projet" />
-  
+      {/* SECTION2 */}
+      <div className='px-10 py-20 flex flex-col items-center gap-6'>
+        <h1 className='text-3xl font-bold'>Ce que je <span className='animate_gradient'> crée </span></h1>
+        <p className='text-center lg:text-start py-2'>Donner vie aux idées à travers le code et la créativité</p>
+        
+        <div className='flex flex-wrap justify-center items-center gap-10 mt-5'>
+          
+          <div className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <IoIosColorPalette className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Frontend</p>
+            <p>React, Tailwind, Bootstrap</p>
+          </div>
+
+           <div className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <CgDatabase className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Backend</p>
+            <p>Php, Symfony, APIs</p>
+          </div>
+
+          <div className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <IoGameControllerOutline className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Jeux</p>
+            <p>C#, Unitiy3D</p>
+          </div>
+
+          <div className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <FaDesktop className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Logiciel de Bureau</p>
+            <p>Python, Tkinter</p>
+          </div>
+
         </div>
 
-        <div className="p-5 md:w-xl" data-aos="fade-left">
-          <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
-          <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/> Autonome, j'ai mené plusieurs projets de A à Z, allant de sites WordPress à une plateforme de formation en ligne.<br/><br/> Je souhaite aujourd'hui intégrer une équipe afin de collaborer sur des projets plus ambitieux et continuer à évoluer.</p>
+        <div className='w-50 rounded-xl bg-base-100 card-border border-base-300 flex items-center justify-center gap-2 py-2 b hover:bg-primary hover:text-base-100 mt-5'>
+          <p>A Propos de Moi </p> <FaLongArrowAltRight />
         </div>
-
 
       </div>
 
-      <div className="flex flex-col justify-center items-center w-full overflow-hidden" id="competences">
-        <h2 className="font-bold text-accent mb-25">LES COMPETENCES</h2>
-   
-        <div className="tabs tabs-border flex justify-center mt-5 w-full" data-aos="zoom-in-left">
-          {/* first tab */}
-          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Front-end" />
+      {/* SECTION 3 */}
+      <div className="flex flex-col items-center justify-center gap-5 p-10 pt-25" id="about">
 
-          <div className="tab-content bg-base-100 p-10 w-full">
-           
-            <div className="flex flex-col gap-5 w-full">
+        <h1 className='text-3xl font-bold'>À Propos de <span className='animate_gradient'> Moi </span></h1>
+        <p className='text-center lg:text-start py-2'>Développeur full-stack. Je construis des application web qui se livrent.</p>
+        
+        <div className='card-border border-base-300 flex flex-wrap items-center justify-center p-5 rounded-xl bg-base-100 '>
+        
+          <div className="p-5 xl:w-lg">
 
-              <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row">
-                <img src="/image/react.png" alt="logo React" />
-                <img src="/image/html.png" alt="logo HTML" />
-                <img src="/image/css.png" alt="logo CSS" />
+            <h2 className="font-bold text-primary mb-5 text-2xl">À PROPOS</h2>
+            <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et React.<br/><br/> Autonome, j'ai mené plusieurs projets de A à Z, allant de sites WordPress, en passant par des application web e-learning et saas immobilier ainsi que des collaborations opensource sur github.<br/><br/> Je souhaite aujourd'hui intégrer une équipe afin de collaborer sur des projets plus ambitieux et continuer à évoluer.</p>
 
-              </div>
-              <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row mt-5">
-                <img src="/image/js.png" alt="logo JavaScript" />
-                <img src="/image/tailwind.png" alt="logo Tailwind CSS" />
-                <img src="/image/bootstrap.png" alt="logo Bootstrap" />
-              </div>
-            </div>
+          </div>
 
+          <div className="p-5 mt-5 xl:w-md">
+            <img src="/image/apercuProjet.png" alt="image d'aperçu du projet" />
           </div>
           
-          {/* 2 tab */}
-          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Back-end" defaultChecked />
-          <div className="tab-content bg-base-100 p-10">
-            
-
-            <div className="w-full flex justify-center items-center gap-10 flex-col md:flex-row">
-              <img src="/image/php.png" alt="logo PHP" />
-              <img src="/image/symfony.png" alt="logo Symfony" />
-              <img src="/image/mysql.png" alt="logo MySQL" />
-
-            </div>
-              
-     
-
-          </div>
-
-          {/* 3 tab */}
-          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Gestion de projet" />
-          <div className="tab-content bg-base-100 p-10">
-            <div className="flex flex-col gap-5">
-
-              <div className="w-full flex justify-center items-center gap-10 flex-col lg:flex-row mt-5">
-                <img src="/image/git.png" alt="logo Git" />
-                <img src="/image/trello.png" alt="logo Trello" />
-                <img src="/image/docker.png" alt="logo Docker" />
-
-              </div>
-             
-            </div>
-          </div>
         </div>
 
       </div>
 
-      <div className="flex justify-center items-center flex-col mt-25 p-5 overflow-hidden" id="projects" >
-        <h2 className="font-bold text-accent mb-5 p-10">PORTFOLIO</h2>
+      {/* SECTION 4 */}
+      <div className="flex flex-col justify-center items-center w-full overflow-hidden gap-5 pt-25" id="competences">
 
-        <Portfolio/>
+        <h2 className="font-bold text-3xl">Mes  <span className='animate_gradient'>Compétences</span></h2>
+        <p> Technologies et domaines dans lesquels je travaille.</p>
+   
+        <div className="grid xl:grid-cols-2 grid-cols-1 gap-5 place-items-center mt-15 xl:w-7xl px-12">
+
+          <div className='card-border border-base-300 rounded-xl p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+              
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <CgDatabase />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>Développement Backend</p>
+            <p className='text-sm'>Maîtrise du cycle de vie complet d'une application : APIs REST, bases de données, authentification et déploiement. Stack privilégiée : Symfony + MySQL/PostgreSQL.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Symfony</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Php</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>PostgreSQL</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>API REST</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>API Platform</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Python</p>
+            </div>
+          </div>
+
+          <div className='card-border border-base-300 rounded-xl p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <IoIosColorPalette />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>Développement Frontend</p>
+            <p className='text-sm'>J'ai développé plus de 12 applications web avec React et TypeScript. J'accorde une grande importance aux animations, aux performances et à la précision du design — ce portfolio en est un bon exemple.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>React</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Bootstrap</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Tailwind</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>TypeScript</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Redux</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Zustand</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Tanstack</p>
+            </div>
+          </div>
+
+          <div className='card-border border-base-300 rounded-xl p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <IoGameControllerOutline />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>Développement de Jeux</p>
+            <p className='text-sm'>Curieux de découvrir différents domaines, j'ai réalisé deux projets de jeux vidéo avec Unity, explorant la création de gameplay, la 3D et les mécaniques interactives.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>C#</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Unity 3D</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Game Design</p>
+            </div>
+          </div>
+
+          <div className='card-border border-base-300 rounded-xl  p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <CgDatabase />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>CyberSécurité </p>
+            <p className='text-sm'>J'ai exploré la cybersécurité offensive via le pentest, le bug bounty et des plateformes comme TryHackMe et Hack The Box, développant mes compétences en sécurité applicative.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Exegol</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Burpsuite</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Nmap</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Metasploit</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>TOP 10 OWASP</p>
+
+            </div>
+          </div>
+          <div className='card-border border-base-300 bg-base-100 p-5 rounded-xl col-span-1 xl:col-span-2 flex flex-col gap-6'>
+            <p className='text-2xl font-bold'>En ce moment</p>
+            <p>En recherche active d'une opportunité en développement web, je construis un SaaS immobilier tout en contribuant à l'écosystème open source, avec notamment une contribution aux traductions de Symfony.</p>
+          </div>
+
+        </div>
+
       </div>
 
+      {/* SECTION 5 */}
+      <div className="flex justify-center items-center flex-col pt-25 p-5 overflow-hidden gap-5 rounded-bl-xl rounded-br-xl" id="projects">
+        <h2 className="font-bold text-3xl">Mes <span className='animate_gradient'>Projets</span></h2>
+        <p className='mb-15'>Les projets sur le web, desktop, jeux, Cybersécurité.</p>
+
+        <div className='flex flex-wrap justify-center gap-4 mb-5'>
+          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Application web</p>
+          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Cybersécurité</p>
+          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Desktop</p>
+          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Jeux</p>  
+        </div>
+        
+        <Portfolio/>
+
+        
+
+      </div>
 
       <div className="flex flex-col justify-center p-5 mt-25 overflow-hidden" id="experiences">
 
@@ -406,8 +517,7 @@ function App() {
           </ul>
         </div>
       </div>
-
-
+      
       <Contact/>
 
       <div className="fixed right-5 bottom-5 w-8 h-8 bg-primary rounded-4xl flex justify-center items-center">
