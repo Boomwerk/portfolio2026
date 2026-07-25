@@ -344,13 +344,8 @@ function App() {
         <h2 className="font-bold text-3xl">Mes <span className='animate_gradient'>Projets</span></h2>
         <p className='mb-15'>Les projets sur le web, desktop, jeux, Cybersécurité.</p>
 
-        <div className='flex flex-wrap justify-center gap-4 mb-5'>
-          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Application web</p>
-          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Cybersécurité</p>
-          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Desktop</p>
-          <p className='card-border border-base-300 bg-base-100 py-1 px-3 rounded-xl hover:bg-primary hover:text-base-100 cursor-pointer'>Jeux</p>  
-        </div>
-        
+       
+
         <Portfolio/>
 
         
@@ -575,6 +570,7 @@ function App() {
         </dialog>
         <p className="text-sm text-center">- © 2026 Yannis A. Tous droits réservés.</p>
       </footer>
+
       
     </section>
   )
