@@ -11,7 +11,6 @@ const Navbar = () => {
         const media = window.matchMedia("(min-width: 1023px)");
 
         const handleResize = (e: { matches: boolean }) => {
-            console.log(e);
             if (e.matches) {
                 setIsOpen(false);
             }
@@ -33,7 +32,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto flex justify-between items-center p-4 z-2 rounded-xl card-border border-base-300 bg-base-100">
 
                 <div className="">
-                    <h3 className="font-bold animate_gradient text-[18px]">YANNIS</h3>
+                    <a href="#home" className="font-bold animate_gradient text-2xl">YANNIS</a>
                 </div>
 
                 <button className="lg:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
@@ -50,7 +49,7 @@ const Navbar = () => {
                 </button>
                 
                 
-                <div className={`${isOpen ? 'absolute top-16 left-0 w-full px-5' : 'hidden'} lg:flex`}>
+                <div className={`${isOpen ? 'absolute top-16 left-0 w-full px-5 z-500' : 'hidden'} lg:flex`}>
                     <div className={`${isOpen ?'max-w-7xl mx-auto bg-base-100 card-border border-base-300 rounded-xl' : ''}`}>  
                         <ul className={`${isOpen ? 'flex flex-col p-5 gap-8':'flex gap-10 px-5'}`}>
                             <li className="hover:bg-base-200 rounded p-2"><a href="#about" className="hover:border-b-2 hover:border-b-primary">À Propos</a></li>
