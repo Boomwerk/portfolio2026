@@ -8,7 +8,7 @@ import Navbar from './components/navbar.tsx';
 import Portfolio from './components/portfolio.tsx';
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
-import { motion } from "motion/react";
+import { motion,useScroll  } from "motion/react";
 import { IoIosColorPalette } from "react-icons/io";
 import { CgDatabase } from "react-icons/cg";
 import { IoGameControllerOutline } from "react-icons/io5";
@@ -57,8 +57,12 @@ function App() {
     }
   };
 
+
+  const { scrollYProgress } = useScroll();
+
   return (
     <section className='bg-base-200 overflow-hidden'>
+      <motion.div style={{scaleX:scrollYProgress}} className='py-0.5 bg-primary fixed top-0 left-0 w-full z-20 origin-left rounded-xl'></motion.div>
       <Navbar/>
       {/* SECTION HERO */}
       <motion.div variants={container} initial="hidden" animate="visible" className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto flex-col md:flex-row min-h-screen pt-28 pb-24 px-6" id="home">
