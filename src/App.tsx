@@ -1,10 +1,25 @@
+import '@fontsource-variable/sora/wght.css';
+import '@fontsource-variable/space-grotesk/wght.css';
 import './index.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from 'react';
-import Navbar from '../components/navbar.tsx';
-import Portfolio from '../components/portfolio';
-import Contact from '../components/contact';
+import Navbar from './components/navbar.tsx';
+import Portfolio from './components/portfolio.tsx';
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
+import { motion } from "motion/react";
+import { IoIosColorPalette } from "react-icons/io";
+import { CgDatabase } from "react-icons/cg";
+import { IoGameControllerOutline } from "react-icons/io5";
+import { FaDesktop } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
+import { FaRegBuilding } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+
+
+
 
 function App() {
 
@@ -21,153 +36,386 @@ function App() {
     setModal(!modal);
   };
 
+
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 50
+    },
+    visible: {
+      opacity: 1,
+      y: 0
+    }
+  };
+
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
-     <>
+    <section className='bg-base-200 overflow-hidden'>
       <Navbar/>
+      {/* SECTION HERO */}
+      <motion.div variants={container} initial="hidden" animate="visible" className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto flex-col md:flex-row min-h-screen pt-28 pb-24 px-6" id="home">
 
-      <div className="bg-base-100 p-5 flex justify-center w-full flex-col md:flex-row h-screen" id="home">
-         
-          <div className="flex justify-center min-w-1/2">
-              <div className="flex flex-col min-w-3/4 justify-center  ">
-                <h1 className="text-4xl font-bold ">Développeur Web <br/><span className="text-accent">Full Stack</span></h1>
-                <p className="text-lg mt-4 text-start">Je conçois et développe des applications web 
-                  <br/>performantes avec <span className="text-accent">Symfony</span>.
-                </p>
+        
 
-                <p className="flex text-accent items-center gap-2 mt-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className=" w-7 fill-accent">
-                    <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
-                  </svg>
-                    Manosque, Aix en provence, Marseille et alentours
-                </p>
+        <div className="flex flex-col justify-center">
 
-                <div className="w-50 flex content-around items-center gap-5 mt-4">
+          <motion.div className='flex items-center' variants={fadeUp}>
 
-                  <div className="flex items-center align-items rounded-full bg-accent p-2">
-                     <a href="https://www.linkedin.com/in/yannis-a-65a55b196/" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin fill-base-100" viewBox="0 0 16 16">
-                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                      </svg>
-                    </a>
-                  </div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary mr-2 ">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+            </svg>
+            <p className='text-primary py-5 animate_gradient text-sm md:text-lg' > BIENVENUE DANS MON MONDE </p>
 
-                  <div className="flex items-center align-items rounded-full bg-accent p-2">
-                    <a href="https://github.com/Boomwerk" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github fill-base-100" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                      </svg>
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center align-items rounded-full bg-accent p-2">
-                    <a href="https://x.com/boomwerkdev" target="_blank" rel="noopener noreferrer">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x fill-base-100" viewBox="0 0 16 16">
-                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
-                      </svg>
-                    </a>
-                  </div>
+          </motion.div>
 
-                </div>
-              </div>
-          </div>
+          <motion.div variants={fadeUp}>
 
-          <div className="p-5 flex justify-center items-center mt-10 min-w-2/5">
-            <img src="/image/undraw_programming_j1zw.svg" alt="image de programmation" width="400px" />
-          </div>
-      </div>
+            <h1 className="text-4xl sm:text-7xl font-bold ">Salut, moi c'est <span 
+              className='animate_gradient'
+              >Yannis</span>
+            </h1>
 
-      <div className="bg-base-100 mb-37.5 flex md:flex-row md:justify-around md:gap-5 flex-col overflow-hidden" id="about">
-
-        <div className="p-5 md:w-md" data-aos="fade-right">
-          <img src="/image/apercuProjet.png" alt="image d'aperçu du projet" />
-        </div>
-
-        <div className="p-5 md:w-xl" data-aos="fade-left">
-          <h2 className="font-bold text-accent mb-5">À PROPOS</h2>
-          <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et JavaScript.<br/><br/>
-
-Autonome, j’ai mené plusieurs projets de A à Z, allant de sites WordPress à une plateforme de formation en ligne.<br/><br/>
-
-Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des projets plus ambitieux et continuer à évoluer.</p>
-        </div>
-
-
-      </div>
-
-      <div className="flex flex-col justify-center items-center w-full overflow-hidden" id="competences">
-        <h2 className="font-bold text-accent mb-25">LES COMPETENCES</h2>
-   
-        <div className="tabs tabs-border flex justify-center mt-5 w-full" data-aos="zoom-in-left">
-          {/* first tab */}
-          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Front-end" />
-
-          <div className="tab-content bg-base-100 p-10 w-full">
-           
-            <div className="flex flex-col gap-5 w-full">
-
-              <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row">
-                <img src="/image/react.png" alt="logo React" />
-                <img src="/image/html.png" alt="logo HTML" />
-                <img src="/image/css.png" alt="logo CSS" />
-
-              </div>
-              <div className="w-full flex justify-center items-center gap-10 flex-col sm:flex-row mt-5">
-                <img src="/image/js.png" alt="logo JavaScript" />
-                <img src="/image/tailwind.png" alt="logo Tailwind CSS" />
-                <img src="/image/bootstrap.png" alt="logo Bootstrap" />
-              </div>
-            </div>
-
-          </div>
-          
-          {/* 2 tab */}
-          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Back-end" defaultChecked />
-          <div className="tab-content bg-base-100 p-10">
+          </motion.div >
             
+          <motion.p variants={fadeUp} className='text-xl sm:text-3xl pt-4 flex gap-2'>Développeur FullStack 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-9 text-primary">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
+            </svg>
+          </motion.p>
 
-            <div className="w-full flex justify-center items-center gap-10 flex-col md:flex-row">
-              <img src="/image/php.png" alt="logo PHP" />
-              <img src="/image/symfony.png" alt="logo Symfony" />
-              <img src="/image/mysql.png" alt="logo MySQL" />
+          <motion.p variants={fadeUp} className="text-sm sm:text-lg mt-4 text-start w-85 md:w-full">Développeur full-stack basé à La Ciotat. J'ai livré plusieurs projets : applications web, e-commerce, SaaS, e-learning. Je travaille vite, je fais attention aux détails.</motion.p>
 
-            </div>
-              
-     
+          <motion.div variants={fadeUp} className='p-4 border-s-4 rounded border-primary my-4 w-85 md:w-full'>
+            <p className='italic text-sm md:text-lg'>" Je crois en ce que je peux apprendre à faire, pas seulement en ce que je sais déjà faire. "</p>
+          </motion.div>
 
-          </div>
-          {/* 3 tab */}
-          <input type="radio" name="my_tabs_2" className="tab checked:text-accent" aria-label="Gestion de projet" />
-          <div className="tab-content bg-base-100 p-10">
-            <div className="flex flex-col gap-5">
+          <motion.p variants={fadeUp} className="flex text-primary items-center gap-2 my-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" className=" w-5 fill-primary">
+              <path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/>
+            </svg>
+              La Ciotat
+          </motion.p>
 
-              <div className="w-full flex justify-center items-center gap-10 flex-col lg:flex-row mt-5">
-                <img src="/image/git.png" alt="logo Git" />
-                <img src="/image/trello.png" alt="logo Trello" />
-                <img src="/image/docker.png" alt="logo Docker" />
+          <motion.div variants={fadeUp} className='flex gap-5 flex-wrap w-85 md:w-full'>
 
+            <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
+
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                </svg>
               </div>
-             
+
+              <div className='flex flex-col'>
+                <p className='font-bold text-md'>3+</p>
+                <p className='text-xs'>Années d'expérience</p>
+              </div>
+
             </div>
+
+            <div className='card-border border-base-300 rounded-xl flex items-center px-3 py-3 gap-5'>
+
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-primary">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                </svg>
+              </div>
+
+              <div className='flex flex-col'>
+                <p className='font-bold text-md'>15+</p>
+                <p className='text-xs'>Projets réalisés</p>
+              </div>
+            </div>
+
+          </motion.div>
+
+          <motion.div variants={fadeUp} className='flex flex-wrap gap-4 mt-15 w-85 md:w-full'>
+            <a href="#projects" className='px-5 py-2 bg-primary rounded-lg text-neutral flex items-center justify-center hover:bg-base-100 hover:text-primary'>Voir Mon Travail</a>
+            <a href="#contact" className='px-5 py-2 rounded-lg card-border border-base-300 flex justify-center items-center hover:bg-primary hover:text-base-100'>Contact</a>
+            <a href="https://www.linkedin.com/in/yannis-a-65a55b196/"  target="_blank" rel="noopener noreferrer" className='flex justify-center items-center rounded-full card-border border-base-300 hover:bg-primary hover:text-base-100 h-13 w-13'>
+              <FaLinkedinIn />
+            </a>
+            <a href="https://github.com/boomwerk"  target="_blank" rel="noopener noreferrer" className='flex justify-center items-center h-13 w-13 rounded-full card-border border-base-300 hover:bg-primary hover:text-base-100 '>
+              <FaGithub />
+            </a>
+
+          </motion.div>
+        </div>
+    
+       
+        
+        <motion.div variants={fadeUp} className="flex flex-col justify-center items-center w-85 md:w-full ">
+
+          <div className='flex flex-col justify-center items-center w-85 h-85 md:w-100 md:h-100 border border-primary/40 rounded-full p-15 bg-base-100 '>
+            <svg xmlns="http://www.w3.org/2000/svg" width="960" height="729.315" viewBox="0 0 960 729.315" role="img" >
+              <g transform="translate(-666.606 -418.401)"><path d="M206.59,598.162c10.5,37.673,21.969,73.351,34.31,106.778l891.38,3.689c12.34-33.428,23.8-69.1,34.31-106.781Z" transform="translate(460.016 378.717)" fill="#f2f2f2"/><path d="M398.28,505.314V725.334H552.423V505.314a7.4,7.4,0,0,0-5.213-7.08,6.811,6.811,0,0,0-2.21-.343H405.723A7.43,7.43,0,0,0,398.28,505.314Zm60.162,75.6a16.455,16.455,0,1,1,32.91,0v25.537a16.455,16.455,0,0,1-32.91,0Z" transform="translate(514.387 263.874)" fill="#2f2e41"/><path d="M398.06,600.632V621.85a4.175,4.175,0,0,0,4.141,4.163H549.008a4.163,4.163,0,0,0,4.141-4.163V600.632Z" transform="translate(514.133 381.546)" fill="#3f3d56"/><path d="M285.25,357.131V758.866a19.322,19.322,0,0,0,19.3,19.307H899.892A19.322,19.322,0,0,0,919.2,758.866V357.131a19.333,19.333,0,0,0-19.307-19.292H304.553A19.332,19.332,0,0,0,285.25,357.131Z" transform="translate(384.929 80.561)" fill="#3f3d56"/><path d="M291.76,354.683v391.78a10.338,10.338,0,0,0,10.318,10.319h585.4A10.338,10.338,0,0,0,897.8,746.463V354.683a10.341,10.341,0,0,0-10.318-10.341h-585.4A10.341,10.341,0,0,0,291.76,354.683Z" transform="translate(392.388 88.009)" fill="#fff"/><path d="M343.173,631.072a6.326,6.326,0,0,0,4.972,2.378H696.42a6.41,6.41,0,0,0,6.262-7.723l-5.408-25.68a6.42,6.42,0,0,0-3.99-4.657,6.206,6.206,0,0,0-2.274-.43H353.531a6.209,6.209,0,0,0-2.274.43,6.418,6.418,0,0,0-3.99,4.657l-5.408,25.68A6.4,6.4,0,0,0,343.173,631.072Z" transform="translate(449.619 375.051)" fill="#2f2e41"/><g transform="translate(1038.4 454.934)"><rect width="219.425" height="44.781" rx="16" transform="translate(0)" fill="#e6e6e6"/><path d="M2.109,4.93V-17.46h7.927a8.241,8.241,0,0,1,3.866.8,5.359,5.359,0,0,1,2.267,2.148,6.063,6.063,0,0,1,.743,2.982,4.953,4.953,0,0,1-.51,2.382,4.133,4.133,0,0,1-1.343,1.5,6.24,6.24,0,0,1-1.809.826v.21a4.366,4.366,0,0,1,2.095.721,5.271,5.271,0,0,1,1.742,1.879,5.894,5.894,0,0,1,.7,2.976A6.006,6.006,0,0,1,17.011,2a5.328,5.328,0,0,1-2.425,2.142,10.008,10.008,0,0,1-4.293.784ZM4.962,2.405h5.255A5.472,5.472,0,0,0,13.932,1.4a3.209,3.209,0,0,0,1.1-2.463,3.943,3.943,0,0,0-.571-2.073,4.179,4.179,0,0,0-1.619-1.519,5.1,5.1,0,0,0-2.484-.571h-5.4Zm0-10.038H9.887a4.564,4.564,0,0,0,3.047-1.052,3.458,3.458,0,0,0,1.246-2.78,3.341,3.341,0,0,0-1.013-2.463,4.377,4.377,0,0,0-3.191-1.008H4.962Z" transform="translate(24.759 28.656)" fill="#090814"/><g transform="translate(85.083 11.146)"><path d="M9.272,18.423a1.254,1.254,0,0,1-.9-.382,1.324,1.324,0,0,1,0-1.843l7.636-7.816a1.252,1.252,0,0,1,1.8,0,1.324,1.324,0,0,1,0,1.843l-7.641,7.816a1.254,1.254,0,0,1-.9.382Z" transform="translate(-1.636 -1.965)"/><path d="M19.182,18.518a1.257,1.257,0,0,1-.962-.448,1.324,1.324,0,0,1,.125-1.838l.644-.573c2.107-2.19,3.089-6.753,1.244-8.643s-6.3-.886-8.441,1.271l-.56.661a1.253,1.253,0,0,1-1.791.134A1.324,1.324,0,0,1,9.31,7.245L9.9,6.539q.03-.036.063-.069a10.905,10.905,0,0,1,5.835-2.92,6.865,6.865,0,0,1,6.241,1.621,7.263,7.263,0,0,1,1.583,6.389,11.367,11.367,0,0,1-2.857,5.968q-.031.032-.065.063l-.68.6A1.251,1.251,0,0,1,19.182,18.518Z" transform="translate(-1.364 -3.362)"/><path d="M9.9,24.1a6.348,6.348,0,0,1-4.642-1.755A7.924,7.924,0,0,1,3,16.815c0-2.306,2.3-5.59,3.529-6.835l.054-.051.672-.6a1.253,1.253,0,0,1,1.791.112,1.324,1.324,0,0,1-.112,1.839l-.639.578c-1.208,1.231-2.75,3.846-2.75,4.958a5.271,5.271,0,0,0,1.5,3.68c1.853,1.875,6.314.9,8.487-1.237l.448-.612a1.254,1.254,0,0,1,1.781-.269,1.323,1.323,0,0,1,.259,1.82l-.5.7a1.3,1.3,0,0,1-.127.149,11.032,11.032,0,0,1-5.862,2.919A9.935,9.935,0,0,1,9.9,24.1Z" transform="translate(-3 -1.662)"/></g><rect width="2.239" height="44.781" transform="translate(120.908)" fill="#fff"/><path d="M.773,4.356,3.512-11.909H6.177L3.439,4.356ZM5.3-14.572a1.556,1.556,0,0,1-1.215-.513,1.394,1.394,0,0,1-.336-1.223,1.929,1.929,0,0,1,.756-1.231,2.2,2.2,0,0,1,1.392-.5,1.584,1.584,0,0,1,1.231.5,1.4,1.4,0,0,1,.336,1.231,1.949,1.949,0,0,1-.758,1.223A2.2,2.2,0,0,1,5.3-14.572Z" transform="translate(59.681 29.229)"/><g transform="translate(136.581 11.195)"><path d="M2.239,0A2.239,2.239,0,1,1,0,2.239,2.239,2.239,0,0,1,2.239,0Z" transform="translate(11.195 4.478)" fill="#090814"/><path d="M6.478,2H19.912A4.478,4.478,0,0,1,24.39,6.478V19.912a4.478,4.478,0,0,1-4.478,4.478H6.478A4.478,4.478,0,0,1,2,19.912V6.478A4.478,4.478,0,0,1,6.478,2ZM19.912,22.151a2.239,2.239,0,0,0,2.239-2.239V6.478a2.239,2.239,0,0,0-2.239-2.239H6.478A2.239,2.239,0,0,0,4.239,6.478V19.912a2.239,2.239,0,0,0,2.239,2.239Z" transform="translate(-2 -2)"/><path d="M17.673,17.916a1.119,1.119,0,0,1-.791-.328L11.292,12A1.145,1.145,0,0,0,9.5,12l-5.59,5.59a1.119,1.119,0,1,1-1.583-1.583l5.6-5.6.016-.015a3.374,3.374,0,0,1,4.911,0l.016.015,5.6,5.6a1.12,1.12,0,0,1-.793,1.911Z" transform="translate(-2 -1.124)"/><path d="M21.956,17.677a1.119,1.119,0,0,1-.791-.328L17.814,14a1.145,1.145,0,0,0-1.791,0L14.911,15.11a1.119,1.119,0,1,1-1.583-1.583l1.12-1.119.016-.015a3.374,3.374,0,0,1,4.911,0l.016.015,3.359,3.359a1.12,1.12,0,0,1-.793,1.911Z" transform="translate(-0.685 -0.885)"/></g><g transform="translate(176.883 11.199)"><path d="M7.079,27.39A3.14,3.14,0,0,1,4,24.191V14.6C4,9.59,6.54,6.29,11.323,5.048A1.536,1.536,0,0,1,13.19,6.211a1.6,1.6,0,0,1-1.12,1.94c-3.428.9-4.992,2.922-4.992,6.445v1.6H11.7a3.135,3.135,0,0,1,3.071,2.959l.008.24v4.8a3.14,3.14,0,0,1-3.079,3.2Z" transform="translate(9.855 -5.003)"/><path d="M16.079,27.39A3.14,3.14,0,0,1,13,24.191V14.6c0-5.005,2.54-8.3,7.323-9.547A1.536,1.536,0,0,1,22.19,6.212a1.6,1.6,0,0,1-1.12,1.94c-3.428.9-4.992,2.922-4.992,6.445v1.6H20.7a3.135,3.135,0,0,1,3.071,2.959l.008.24v4.8a3.14,3.14,0,0,1-3.079,3.2Z" transform="translate(-12.999 -5.003)"/></g></g><g transform="translate(885.443 541.866)"><path d="M527.3,624.116s166.464,20.075,150.569,0c-5.756-7.262-7.344-28.776-7.026-53.284.1-7.445.374-15.157.751-22.833,1.842-36.8,6.273-72.776,6.273-72.776S532.317,406.631,549.047,461c6.692,21.968,4.5,52.82-.586,81.776-1.489,8.45-3.212,16.73-5.02,24.594A576.513,576.513,0,0,1,527.3,624.116Z" transform="translate(-202.993 -311.727)" fill="#ed9da0"/><path d="M904.2,866.557v-1.4l-293.811-3.2-179.007-1.673h-.5l.188,2.476-.251-2.476H430.5V860l-2.292-22.5-.87-8.514-.267-2.66-.234-2.225L416.5,789.617l-10.34-34.43-8.7-28.992-13.284-44.3s7.527-17.568,11.717-22.585,20.6-40.937,20.6-40.937,23.452-32.4,39.054-36.3c6.54-1.672,19.458-3.9,33.176-6.692,5.136-1.038,44.5-12.406,46.842-13.985,12.3-9.013,43.112-10.038,44.3-10.038h0a.688.688,0,0,0,0-.119v-.15a17.1,17.1,0,0,1,0-2.1,13.428,13.428,0,0,1,.15-2.342,2.1,2.1,0,0,1,.119-.837c.084-.6.188-1.238.335-1.906a8.365,8.365,0,0,1,.2-.886,28.8,28.8,0,0,1,2.093-5.839c.117-.267.267-.553.4-.82a30.512,30.512,0,0,1,2.844-4.4c.218-.285.451-.586.7-.87a32.761,32.761,0,0,1,4.552-4.416c.45-.352.919-.72,1.4-1.052a7.788,7.788,0,0,1,.855-.6l1.489-.971,1.388-.8c1.221-.669,2.51-1.322,3.915-1.941.434-.2.9-.385,1.372-.562s1.2-.469,1.823-.7h.1l1.254-.5c.954-.318,1.924-.6,2.944-.886l1.556-.4,1.672-.385,1.674-.352c1.672-.335,3.462-.635,5.336-.87l1.906-.234,1.953-.2,2.025-.167,2.877-.167,3.345-.119A208.7,208.7,0,0,1,674.1,520.43a120.906,120.906,0,0,1,30.5-2.816h1.456l1.672.1H708.8l2.157.2a16.03,16.03,0,0,1,2.175.251c.72.1,1.472.188,2.192.3l1.1.188c1.088.188,2.192.385,3.345.617q.553.1,1.1.251c1.456.318,2.911.7,4.356,1.137.72.2,1.439.434,2.157.685a9.694,9.694,0,0,1,1.071.374l1.071.384,1.052.418,1.254.5c.635.267,1.254.553,1.873.855.352.15.7.318,1.038.5s.685.335,1,.518a46.413,46.413,0,0,1,10.389,7.328l.855.82.837.855c.284.285.553.586.82.886a39.883,39.883,0,0,1,3.045,3.764c.267.352.518.7.771,1.071a44.7,44.7,0,0,1,2.877,4.885c.218.4.418.82.617,1.221a54.69,54.69,0,0,1,3.345,8.783q.469,1.672.855,3.345s35.417,15.623,64.795,26.937c7.811,3,15.172,5.738,21.331,7.8,1.791.6,3.464,1.154,5.02,1.672a44.666,44.666,0,0,0,10.455,2.4,32.855,32.855,0,0,1,5.021.469c13.5,2.192,36.638,11.717,39.166,21.265a6.169,6.169,0,0,1,.167,2.342s55.025,170.362,55.63,173.49c2.435,12.748,7.867,37.023,10.539,46.842,1.99,7.328,4.885,17.365,6.875,24.257a2.342,2.342,0,0,0,.167.586l-75-.736v1.4H904.1Z" transform="translate(-263.933 -260.775)" fill="var(--color-primary)"/><path d="M515.8,549.027c48.511,8.935,139.863,7.009,179.345,5.654-14.47-51.863-85.037-34.23-85.037-34.23C522.758,503.02,516.067,539.191,515.8,549.027Z" transform="translate(-199.96 -260.762)" fill="var(--color-primary)"/><path d="M835.241,672.919s-57.149-8.783-58.271,16.312,29.142,42.627,29.142,42.627Z" transform="translate(-776.94 -156.005)" fill="#ed9da0"/><path d="M704.943,766.081s1.489,3.545,4.233,8.684A115.439,115.439,0,0,0,724.234,796.8l.451.485h2.7l96.6.886H826.3l.285-.335L845.312,775.6l7.06-8.382.284-.352.6-.7.335-.4.434-.518,13.734-16.3-5.02-20.913L854.195,692.8l-.218-.855-1.672-6.692-1.188-5.02-3.982-16.36-13.65-56.3-24.257,12.549L783.656,665.31l-13.733,24.257H762.4c-1.421,0-4.682,2.745-7.962,5.905-1.17,1.124-2.342,2.309-3.345,3.345-2.979,3.078-5.336,5.722-5.336,5.722s-12.195.267-15.472,9.871a11.706,11.706,0,0,0-.418,1.421,67.444,67.444,0,0,1-4.233,10.975c-2.157,4.7-4.87,10.037-7.612,15.373-5.107,9.787-10.288,19.1-12.195,22.477l-.234.418Z" transform="translate(-689.018 -198.978)" fill="var(--color-primary)"/><path d="M909.742,776.507v-1.4l-293.811-3.2-179.01-1.673h-.5v-.285l-1.672-22.477-.72-10.038L431.283,699.6l-2.157-29.946v-.736a17.759,17.759,0,0,1,.188-4.132.5.5,0,0,1,0-.167,17.388,17.388,0,0,1,3.345-7.762,17.633,17.633,0,0,1,15.759-6.692c20.261,2.076,40.72,3.731,61.2,5.02q4.192.3,8.366.518c132.067,7.846,262.944,1.489,333.763-3.345l5.02-.374c12.262-.871,22.518-1.673,30.415-2.358a17.633,17.633,0,0,1,18.8,14.271,18.45,18.45,0,0,1,.3,2.745l1.137,37.074,1.556,46.961.736,24.024v1.873Z" transform="translate(-269.474 -170.722)" fill="#090814"/><circle cx="96.905" cy="96.905" r="96.905" transform="translate(324.526 46.94)" fill="#ed9da0"/><path d="M544.833,440.592A8.176,8.176,0,0,1,550.682,438l-1.457-4.045a7.679,7.679,0,0,1,8.616-10.215l5.306,1.023-.5-3.545a7.679,7.679,0,0,1,10.287-8.307,8.192,8.192,0,0,0,7.047-.5,8.364,8.364,0,0,0,4.175-5.677L586,397.822l.188-.478c9-15.007,26.315-25.923,47.5-29.926,18.855-3.589,38.19-1.761,56.829-.044,7.4.7,15.744,1.48,22.705,5.741,5.916,3.655,10.918,10.966,9.895,18.327,18.376-5.632,38.08,5.62,47.846,19.791,11.567,16.875,13.461,38.023,13.767,54.543.826,39.1-7.244,71.1-23.922,95.1-1.217,1.739-1.523,5.372-3.933,6.59l.5-.805c-2.7,1.352-5.432,3.523-4.415,5.849,2.935,6.7-16.572,21.508-30.317,26.41-25.076,8.938-58.415,8.178-81.852,4.957l-.826-5.546c-8.46-1.152-14.421-3.348-16.093-6.785-2.958-2.524-5.48-4.784-7.679-6.872l-.023-.023c-.044-.043-.131-.108-.174-.15-10.592-10.156-13.049-15.941-14.158-24.748-1.065-8.635.826-17.4,2.763-25.286-40.756,6.309,16.051-43.413-21.915-53.027a11.847,11.847,0,0,0-1.326-.326c-1.109-.26-2.217-.523-3.284-.826a57.5,57.5,0,0,1-14.61-6.242c-10.613-6.459-14.12-15.022-19.6-24.684a7.451,7.451,0,0,1,.978-8.764Z" transform="translate(-227.04 -365.354)" fill="#090814"/></g><path d="M12,0H168a12,12,0,0,1,12,12v7a12,12,0,0,1-12,12H12A12,12,0,0,1,0,19V12A12,12,0,0,1,12,0Z" transform="translate(731.605 541.81)" fill="var(--color-primary)"/><path d="M0,39.052a3,3,0,0,1-3-3V0A3,3,0,0,1,0-3,3,3,0,0,1,3,0V36.052A3,3,0,0,1,0,39.052Z" transform="translate(908.298 682.182)" fill="var(--color-primary)"/><path d="M9.013,0H55.04a9.013,9.013,0,0,1,0,18.026H9.013A9.013,9.013,0,0,1,9.013,0Z" transform="translate(731.792 691.195)" fill="#d6d6e3"/><path d="M9.013,0H77.572a9.013,9.013,0,1,1,0,18.026H9.013A9.013,9.013,0,0,1,9.013,0Z" transform="translate(808.403 691.195)" fill="#d6d6e3"/><path d="M9.5,0h62a9.5,9.5,0,0,1,0,19H9.5a9.5,9.5,0,0,1,0-19Z" transform="translate(731.605 648.81)" fill="#d6d6e3"/><path d="M9.5,0h78a9.5,9.5,0,0,1,0,19H9.5a9.5,9.5,0,0,1,0-19Z" transform="translate(818.605 648.81)" fill="#d6d6e3"/><path d="M9.5,0h62a9.5,9.5,0,0,1,0,19H9.5a9.5,9.5,0,0,1,0-19Z" transform="translate(921.605 648.81)" fill="#d6d6e3"/><path d="M9.5,0h125a9.5,9.5,0,0,1,0,19H9.5a9.5,9.5,0,0,1,0-19Z" transform="translate(1008.605 648.81)" fill="#d6d6e3"/><path d="M9,0H88a9,9,0,0,1,0,18H9A9,9,0,0,1,9,0Z" transform="translate(731.605 608.81)" fill="#d6d6e3"/><path d="M9,0H73a9,9,0,0,1,0,18H9A9,9,0,0,1,9,0Z" transform="translate(833.605 608.81)" fill="#d6d6e3"/><path d="M9,0H135a9,9,0,0,1,0,18H9A9,9,0,0,1,9,0Z" transform="translate(921.605 608.81)" fill="#d6d6e3"/><path d="M9,0H72a9,9,0,0,1,0,18H9A9,9,0,0,1,9,0Z" transform="translate(1071.606 608.81)" fill="#d6d6e3"/></g>
+            </svg>   
           </div>
+
+
+          <div className='border border-primary/60 rounded-xl px-3 py-1 -mt-8 lg:-mr-50 bg-base-100 flex items-center gap-3 '>
+            <div className="inline-grid *:[grid-area:1/1]">
+              <div className="status status-primary animate-ping"></div>
+              <div className="status status-primary"></div>
+            </div>
+            <p className='text-sm'>
+              Disponible ASAP
+            </p>
+          </div>
+           
+        </motion.div>
+      </motion.div>
+      
+      <motion.div animate={{ y: [-15,-10,-15]}} transition={{ duration:1.5, repeat:Infinity, ease:"easeInOut"}} className='flex flex-col justify-center items-center -mt-15 pb-10'>
+        <p>Faire défiler la page</p>
+        <FaArrowDown />
+      </motion.div>
+
+      {/* BANDEAU */}
+      <div className='w-[150%]'>
+        <div className='bg-base-100/80 card-border border-base-300 py-3 overflow-hidden -ml-5'>
+          <motion.div 
+          animate={{x:["0%","-50.808%"]}}
+          transition={{ duration:30, repeat:Infinity,ease:"linear" }} 
+          className='flex items-center gap-10 text-3xl w-max'>
+            <p>JAVASCRIPT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>SYMFONY</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>REACT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>API PLATFORM</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>GIT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>PHP</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>POSTGRESQL</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>API REST</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>TYPESCRIPT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>DÉVELOPPEMENT WEB</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>2026</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>JAVASCRIPT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>SYMFONY</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>REACT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>API PLATFORM</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>GIT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>PHP</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>POSTGRESQL</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>API REST</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>TYPESCRIPT</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>DÉVELOPPEMENT WEB</p>
+            <div className='h-2 w-2 bg-primary/30 rotate-45'></div>
+            <p>2026</p>
+          </motion.div>
+          
+        </div>
+      </div>
+
+      {/* SECTION CE QUE JE CREER */}
+      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{once:true,amount:0.3}} className='px-10 py-20 flex flex-col items-center gap-6'>
+        <motion.h1 variants={fadeUp} className='text-3xl font-bold'>Ce que je <span className='animate_gradient'> crée </span></motion.h1>
+        <motion.p variants={fadeUp} className='text-center lg:text-start py-2'>Donner vie aux idées grâce au code et à la créativité</motion.p>
+        
+        <div className='flex flex-wrap justify-center items-center gap-10 mt-5'>
+          
+          <motion.div variants={fadeUp} className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <IoIosColorPalette className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Frontend</p>
+            <p>React, Tailwind, Bootstrap</p>
+          </motion.div>
+
+           <motion.div variants={fadeUp}  className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <CgDatabase className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Backend</p>
+            <p>PHP, Symfony, API</p>
+          </motion.div>
+
+          <motion.div variants={fadeUp}  className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <IoGameControllerOutline className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Jeux</p>
+            <p>C#, Unitiy3D</p>
+          </motion.div>
+
+          <motion.div variants={fadeUp}  className='card-border border-base-300 p-10 flex flex-col justify-center items-center gap-5 rounded-xl bg-base-100 w-75'>
+            <div className='bg-primary/20 p-5 rounded-lg'>
+              <FaDesktop className='text-3xl text-primary' />
+            </div>
+            <p className='font-bold text-white'>Logiciels de bureau</p>
+            <p>Python, Tkinter</p>
+          </motion.div>
+
         </div>
 
-      </div>
+        
+      </motion.div>
 
-      <div className="flex justify-center items-center flex-col mt-25 p-5 overflow-hidden" id="projects" >
-        <h2 className="font-bold text-accent mb-5 p-10">PORTFOLIO</h2>
+      {/* SECTION A PROPOS */}
+      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{once:true,amount:0.3}} className="flex flex-col items-center justify-center gap-5 p-5 pt-25" id="about">
 
-        <Portfolio/>
-      </div>
+        <motion.h1 variants={fadeUp} className='text-3xl font-bold'>À propos de <span className='animate_gradient'> Moi </span></motion.h1>
+        <motion.p variants={fadeUp} className='text-center lg:text-start py-2'>Développeur web full-stack. Je construis des application web qui se livrent.</motion.p>
+        
+        <motion.div variants={fadeUp} className='md:aura md:aura-rainbow '>
+          <div className='card-border border-base-300 flex flex-wrap items-center justify-center p-5 rounded-xl bg-base-100  '>
+        
+            <div className="p-5 xl:w-lg">
 
+              <h2 className="font-bold text-primary mb-5 text-2xl">À PROPOS</h2>
+              <p className="pt-5">Développeur web full stack, je réalise des sites et applications avec PHP, Symfony et React.<br/><br/> Autonome, j'ai mené plusieurs projets de A à Z, allant de sites WordPress, en passant par des applications web e-learning et SaaS immobilier ainsi que des collaborations open source sur GitHub.<br/><br/> Je souhaite aujourd'hui intégrer une équipe afin de collaborer sur des projets plus ambitieux et continuer à évoluer.</p>
 
-      <div className="flex flex-col justify-center p-5 mt-25 overflow-hidden" id="experiences">
+            </div>
 
-        <h2 className="font-bold text-primary mb-5 text-center">EXPERIENCES</h2>
+            <div className="p-5 mt-5 xl:w-md">
+              <img src="/image/apercuProjet.png" alt="image d'aperçu du projet" />
+            </div>
+          
+          </div>
+        </motion.div>
+       
+
+      </motion.div>
+
+      {/* SECTION COMPETENCE */}
+      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{once:true,amount:0.3}} className="flex flex-col justify-center items-center w-full overflow-hidden gap-5 pt-25" id="competences">
+
+        <motion.h2 variants={fadeUp} className="font-bold text-3xl">Mes  <span className='animate_gradient'>Compétences</span></motion.h2>
+        <motion.p variants={fadeUp} className='text-center'> Technologies et domaines dans lesquels je travaille.</motion.p>
+   
+        <div className="grid xl:grid-cols-2 grid-cols-1 gap-5 place-items-center mt-15 xl:w-7xl px-5 ">
+
+          <motion.div variants={fadeUp} className='card-border border-base-300 rounded-xl p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+              
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <CgDatabase />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>Développement Backend</p>
+            <p className='text-sm'>Maîtrise du cycle de vie complet d'une application : APIs REST, bases de données, authentification et déploiement. Stack privilégiée : Symfony + MySQL / PostgreSQL.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Symfony</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Php</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>PostgreSQL</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>API REST</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>API Platform</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Python</p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className='card-border border-base-300 rounded-xl p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <IoIosColorPalette />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>Développement Frontend</p>
+            <p className='text-sm'>J'ai développé plus de 12 applications web avec React et TypeScript. J'accorde une grande importance aux animations, aux performances et à la précision du design — Ce portfolio en est un bon exemple.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>React</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Bootstrap</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Tailwind</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>TypeScript</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Redux</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Zustand</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Tanstack</p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className='card-border border-base-300 rounded-xl p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <IoGameControllerOutline />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>Développement de Jeux</p>
+            <p className='text-sm'>Curieux de découvrir différents domaines, j'ai réalisé deux projets de jeux vidéo avec Unity, explorant la création de gameplay, la 3D et les mécaniques interactives.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>C#</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Unity 3D</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Game Design</p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeUp} className='card-border border-base-300 rounded-xl  p-5 flex flex-col gap-5 bg-base-100 col-span-1'>
+            <div className='flex justify-start'>
+              <div className='bg-primary/30 text-primary p-2 rounded text-4xl'>
+                <CgDatabase />
+              </div>
+            </div>
+            <p className='text-2xl font-bold'>CyberSécurité </p>
+            <p className='text-sm'>J'ai exploré la cybersécurité offensive via le pentest, le bug bounty et des plateformes comme TryHackMe et Hack The Box, développant mes compétences en sécurité applicative.</p>
+            <div className='flex flex-wrap gap-1'>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Exegol</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Burpsuite</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Nmap</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>Metasploit</p>
+              <p className='text-xs bg-base-300 px-3 py-1 rounded-xl'>OWASP Top 10</p>
+
+            </div>
+          </motion.div>
+          <motion.div variants={fadeUp} className='card-border border-base-300 bg-base-100 p-5 rounded-xl col-span-1 xl:col-span-2 flex flex-col gap-6'>
+            <p className='text-2xl font-bold'>En ce moment</p>
+            <p>En recherche active d'une opportunité dans le développement web, je construis un SaaS immobilier tout en contribuant à l'écosystème open source, avec notamment des contributions aux traductions de Symfony.</p>
+          </motion.div>
+
+        </div>
+
+      </motion.div>
+
+      {/* SECTION PROJET */}
+      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{once:true,amount:0.3}} className="flex justify-center items-center flex-col pt-25 p-5 overflow-hidden gap-5 rounded-bl-xl rounded-br-xl" id="projects">
+        <motion.h2 variants={fadeUp} className="font-bold text-3xl">Mes <span className='animate_gradient'>Projets</span></motion.h2>
+        <motion.p variants={fadeUp} className='mb-15 text-center'>Les projets sur le web, desktop, jeux, Cybersécurité.</motion.p>
+
+       
+        <motion.div variants={fadeUp}>
+
+          <Portfolio/>
+        </motion.div>
+
+        
+
+      </motion.div>
+
+      {/* SECTION EXPERIENCE */}
+      <div className="flex flex-col justify-center items-center p-5 pt-25 overflow-hidden" id="experiences">
+
+       <h2 className="font-bold text-3xl mb-5" data-aos="fade-up">Mes <span className='animate_gradient'>Experiences</span></h2>
+        <p className='mb-15 text-center' data-aos="fade-up">Mon parcours professionnel et les entreprises avec lesquelles j'ai travaillé.</p>
 
         <div className="flex justify-center w-full p-10">
           <ul className="timeline timeline-vertical">
             <li className="flex flex-col lg:grid  py-10 lg:py-0">
-              <div className="timeline-start text-primary">02/2023 - Aujourd'hui</div>
+              <div className="timeline-start text-primary">06/2026 - 07/2026</div>
               <div className="timeline-middle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -183,34 +431,100 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                 </svg>
               </div>
               <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
-                <h3 className="font-bold text-primary">Freelance Développeur Web</h3> <br/>
+                <h3 className="font-bold text-primary text-lg">Développeur E-commerce</h3> <br />
                 <div className="flex gap-5 mb-5 flex-wrap">
 
-                  <p className="badge badge-primary text-base-100">starCoiffure.fr</p>
-                  <p className="badge badge-primary text-base-100">starBeauté.fr</p>
-                  <p className="badge badge-primary text-base-100">statipro.fr</p>
-                  <p className="badge badge-primary text-base-100">bugBounty</p>
+                  <p className="badge badge-primary text-base-100 text-xs"><FaRegBuilding />ZoneFootball</p>
+  
+                </div>
+
+                <p>- Création d'une extension personnalisée (Php Natif,  Offre : 3 achetés, 1 offert, <br/> de données envoyées via API)</p>
+                <p>- Création d'un site e-commerce complet sous WordPress / WooCommerce.</p>
+                <p>- Gestion du projet de bout en bout : besoin client, développement et mise en production.</p>
+                <p>- Configuration du domaine, hébergement VPS et e-mails professionnels.</p>
+                <p>- Sécurisation et optimisation de l'environnement serveur.</p>
+                <p>- Création des pages avec Elementor et personnalisation du site.</p>
+                <p>- Import massif de produits (CSV, scraping et structuration du catalogue).</p>
+                <p>- Mise en place des bases du SEO.</p>
+                        
+              </div>
+              <hr />
+            </li>
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">06/2026 - 07/2026</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
+                <h3 className="font-bold text-primary text-lg">Freelance Développeur React</h3> <br/>
+                <div className="flex flex-wrap gap-5 mb-5">
+                  <p className="badge badge-primary text-base-100 text-xs"><FaRegBuilding /> Tamara Agence de voyage</p>
+                </div>
+
+                <p>- React</p>
+                <p>- Supabase</p>
+                <p>- Reprise et amélioration d'un projet React existant.</p>
+                <p>- Migration et déploiement de l'application sur Vercel.</p>
+                <p>- Correction de la gestion des données entre LocalStorage et Supabase.</p>
+                <p>- Intervention en renfort technique sur une application existante.</p>
+                <p>- Travail en méthode Agile Scrum.</p>
+              </div>
+              <hr />
+            </li>
+
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">06/2025 - 02/2026</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
+                <h3 className="font-bold text-primary text-lg">Développeur Full-Stack Symfony / React</h3> <br/>
+                <div className="flex flex-wrap gap-5 mb-5">
+
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />Zensy</p>
+              
 
                 </div>
-                
 
-
-                <p>- Framework Symfony/ React/ Tailwind css/ Twig</p>
-                <p>- Développement d’application web</p>
-                <p>- Mise en place d’architecture backend (API, Logique métier, base de données) </p>
-                <p>- Développement Front end react</p>
-                <p>- Application de la méthode agile SCRUM</p>
-                <p>- Déploiement, maintenance et évolutions des projets</p>
-                <p>- Mise en place de maquette Figma</p>
-                <p>- Utilisation des outils ia pour génération d’images</p>
-
+                <p>- Développement d'un SaaS de gestion d'activité pour PME au sein d'une équipe de 4 développeurs.</p>
+                <p>- Conception de fonctionnalités métier : projets, tâches, clients, utilisateurs et tableaux de bord.</p>
+                <p>- Mise en place du système d'abonnement et gestion des droits utilisateurs.</p>
+                <p>- Intégration d'API tierces et génération de documents PDF.</p>
+                <p>- Développement Front-End avec React / TypeScript (Zustand, Zod, TanStack Query).</p> 
+                <p>- Développement Back-End avec Symfony (Doctrine, JWT, API REST).</p>
+                <p>- Mise en place de tests unitaires et fonctionnels.</p>
+                <p>- Déploiement et automatisation CI/CD avec Docker, GitHub Actions et VPS.</p>
                 
               </div>
               <hr />
             </li>
             <li className="flex flex-col lg:grid  py-10 lg:py-0">
               <hr />
-              <div className="timeline-start text-primary">10/2022- 2023</div>
+              <div className="timeline-start text-primary">09/2024 - 05/2025</div>
               <div className="timeline-middle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -226,28 +540,108 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                 </svg>
               </div>
               <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
-                <h3 className="font-bold text-primary">Freelance Formateur Développeur web</h3> <br/>
+                <h3 className="font-bold text-primary text-lg">Pentester - Bug Bounty</h3> <br/>
                 <div className="flex flex-wrap gap-5 mb-5">
 
-                  <p className="badge badge-primary text-base-100"> AFPA</p>
-                  <p className="badge badge-primary text-base-100"> SIMPLON</p>
-                  <p className="badge badge-primary text-base-100"> LeBocalAcademy</p>
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />YesWeHack</p>
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />Hacker One</p>
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />Intigriti</p>
+              
 
                 </div>
+
+                <p>- Recherche de vulnérabilités sur des programmes de bug bounty publics.</p>
+                <p>- Tests d'intrusion et rédaction de rapports de failles de sécurité.</p>
+                
+                
+              </div>
+              <hr />
+            </li>
+             <li className="flex flex-col lg:grid  py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">01/2024 - 10/2024</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
+                <h3 className="font-bold text-primary text-lg">Développeur E-commerce</h3> <br/>
+                <div className="flex flex-wrap gap-5 mb-5">
+
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />Star Coiffure</p>           
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />Star Beauté</p>           
+
+                </div>
+
+                <p>- Création d'un site e-commerce complet sous WordPress / WooCommerce.</p>
+                <p>- Gestion du projet de bout en bout : besoin client, développement et mise en production.</p>
+                <p>- Configuration du domaine, hébergement VPS et e-mails professionnels.</p>
+                <p>- Sécurisation et optimisation de l'environnement serveur.</p>
+                <p>- Création des pages avec Elementor et personnalisation du site.</p>
+                <p>- Import massif de produits (CSV, scraping et structuration du catalogue).</p>
+                <p>- Mise en place des bases du SEO.</p>
+                
+                
+              </div>
+              <hr />
+            </li>
+            <li className="flex flex-col lg:grid  py-10 lg:py-0">
+              <hr />
+              <div className="timeline-start text-primary">10/2022 - 08/2023</div>
+              <div className="timeline-middle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
+                <h3 className="font-bold text-primary text-lg">Freelance - Formateur Développeur web & web mobile</h3> <br/>
+                <div className="flex flex-wrap gap-5 mb-5">
+
+                  <p className="badge badge-primary text-base-100 text-xs"> <FaRegBuilding />Le Collectif (AFPA, Simplon, LeBocalAcadémie)</p>          
+
+                </div>
+
                 <p>- Methode Agile Scrum</p>
                 <p>- HTML - CSS - JAVASCRIPT</p>
                 <p>- PHP</p>
+                <p>- API REST</p> 
+                <p>- Bash / Linux</p>  
+                <p>- Protocoles réseau</p>  
+                <p>- Cybersécurité</p>  
                 <p>- MYSQL</p>
-                <p>- Programmation orienté objet</p>
-                <p>- Code orienté sécurité/Framework/Symfony/</p>
-                <p>- Methode MERISE</p>
+                <p>- Programmation orientée objet</p>
+                <p>- Clean Code</p>
+                <p>- Frameworks Symfony et React</p>
+                <p>- Méthode Merise</p>
+                <p>- Maquettage avec Figma</p>
                 <p>- RGPD</p>
+                
+                
               </div>
               <hr />
             </li>
             <li className="flex flex-col lg:grid  py-10 lg:py-0">
               <hr />
-              <div className="timeline-start text-primary">04/2022 – 09/2022</div>
+              <div className="timeline-start text-primary">04/2022 - 10/2022</div>
               <div className="timeline-middle">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -263,12 +657,12 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                 </svg>
               </div>
               <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
-                <h3 className="font-bold text-primary">CDI Développeur Web fullstack – Easyconnects</h3> <br/>
+                <h3 className="font-bold text-primary text-lg">CDI Développeur Web fullstack - Easyconnects</h3> <br/>
                 <div className="flex flex-wrap gap-5 mb-5">
 
-                  <p className="badge badge-primary text-base-100"> EasyConnects</p>
-                  <p className="badge badge-primary text-base-100"> SudInvestissement</p>
-                  <p className="badge badge-primary text-base-100"> LeCampusDigital</p>
+                  <p className="badge badge-primary text-base-100 text-xs"><FaRegBuilding /> EasyConnects</p>
+                  <p className="badge badge-primary text-base-100 text-xs"><FaRegBuilding /> SudInvestissement</p>
+                  <p className="badge badge-primary text-base-100 text-xs"><FaRegBuilding /> LeCampusDigital</p>
 
                 </div>
                 <p>- Framework Symfony/ React/ Tailwind css/ Twig</p>
@@ -280,7 +674,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                 <p>- Application de la méthode agile SCRUM</p>
                 <p>- Déploiement, maintenance et évolutions des projets</p>
                 <p>- Mise en place de maquette Figma</p>
-                <p>- Utilisation des outils ia pour génération d’images</p>
+                <p>- Utilisation des outils ia pour génération d'images</p>
               </div>
               <hr />
             </li>
@@ -302,27 +696,76 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
                 </svg>
               </div>
               <div className="timeline-end timeline-box w-90 md:w-full p-5" data-aos="fade-left">
-                <h3 className="font-bold text-primary">CDD Formateur Développeur web</h3> <br/>
+                <h3 className="font-bold text-primary text-lg">CDD Formateur Développeur web</h3> <br/>
                 <div className="flex gap-5 mb-5">
-                  <p className="badge badge-primary text-base-100">AFPA</p>
+                  <p className="badge badge-primary text-base-100 text-xs"><FaRegBuilding /> AFPA</p>
                 </div>
 
-                <p>- Développement d’application web</p>
-                <p>- Mise en place d’architecture backend (API, Logique métier, base de données) </p>
+                <p>- Développement d'application web</p>
+                <p>- Mise en place d'architecture backend (API, Logique métier, base de données) </p>
                 <p>- Développement Front end reactjs</p>
                 <p>- Application de la méthode agile SCRUM</p>
                 <p>- Déploiement, maintenance et évolutions des projets</p>
                 <p>- Mise en place de maquette Figma</p>
-                <p>- Utilisation des outils ia pour génération d’images</p>
+                <p>- Utilisation des outils ia pour génération d'images</p>
               </div>
               <hr />
             </li>
           </ul>
         </div>
+
       </div>
 
+      {/* SECTION Contact */}
+      <motion.div variants={container} initial="hidden" whileInView="visible" viewport={{once:true,amount:0.5}} className="flex items-center justify-center flex-col py-80" id="contact">
 
-      <Contact/>
+            <motion.h2 variants={fadeUp} className="font-bold text-3xl mb-5">Restons en <span className='animate_gradient'>Contact</span></motion.h2>
+            <motion.p variants={fadeUp} className='mb-15 text-center mx-5'>Connectons-nous - contactez-moi via l'une de ces plateformes.</motion.p>
+            
+            
+            <div className="flex flex-wrap gap-5 justify-center">
+
+                <motion.a variants={fadeUp} href="https://github.com/Boomwerk" target="_blank" className="py-5 w-60 pl-5 flex gap-5 bg-base-100 rounded-2xl items-center card-border border-base-300">
+                    <div>
+                        <div className="bg-violet-800/30 rounded-xl p-3 text-4xl text-violet-600">
+                            <FaGithub />
+                        </div>
+                    </div>
+                    <div>
+                        <p className="text-xl font-bold">GitHub</p>
+                        <p className="text-sm">@boomwerk</p>
+                    </div>
+                </motion.a>
+
+                <motion.a variants={fadeUp} href="https://www.linkedin.com/in/yannis-a-65a55b196/" target="_blank" className="py-5 w-60 pl-5 flex gap-5 bg-base-100 rounded-2xl items-center card-border border-base-300">
+                    <div>
+                        <div className="bg-blue-400/30 rounded-xl p-3 text-4xl text-blue-400">
+                            <FaLinkedinIn />
+                        </div>
+                    </div>
+                    <div>
+                        <p className="text-xl font-bold">Linkedin</p>
+                        <p className="text-sm">@YannisA</p>
+                    </div>
+                </motion.a>
+
+                <motion.a variants={fadeUp} href="https://x.com/boomwerkdev" target="_blank" className="py-5 w-60 pl-5 flex gap-5 bg-base-100 rounded-2xl items-center card-border border-base-300">
+                    <div>
+                        <div className="bg-blue-600/30 rounded-xl p-3 text-4xl text-blue-600">
+                            <FaXTwitter />
+                        </div>
+                    </div>
+                    <div>
+                        <p className="text-xl font-bold">Twitter</p>
+                        <p className="text-sm">@BoomwerkDev</p>
+                    </div>
+                </motion.a>
+
+                
+
+            </div>
+        
+        </motion.div>
 
       <div className="fixed right-5 bottom-5 w-8 h-8 bg-primary rounded-4xl flex justify-center items-center">
         <a href="/" className="text-base-100">
@@ -345,7 +788,7 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
             <p>
                 <strong>Nom de la société :</strong> boomwerk<br/>
                 <strong>Adresse :</strong> Manosque<br/>
-                <strong>Directeur de ation :</strong> boomwerk<br/>
+                <strong>Directeur de publication :</strong> boomwerk<br/>
                 <strong>Email :</strong> <a href="mailto:boomwerk@outlook.fr">boomwerk@outlook.fr</a><br/>
             </p>
 
@@ -379,8 +822,11 @@ Je souhaite aujourd’hui intégrer une équipe afin de collaborer sur des proje
         </dialog>
         <p className="text-sm text-center">- © 2026 Yannis A. Tous droits réservés.</p>
       </footer>
-      
-    </>
+
+  
+
+     
+    </section>
   )
 }
 
