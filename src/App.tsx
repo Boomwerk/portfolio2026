@@ -170,9 +170,9 @@ function App() {
               <div className="status status-primary animate-ping"></div>
               <div className="status status-primary"></div>
             </div>
-            <p className='text-sm'>
-              Disponible ASAP
-            </p>
+            <a href='https://www.g-nav.org/' target='_blank' className='text-sm'>
+              Actuellement employé @G-NAV
+            </a>
           </div>
            
         </motion.div>
